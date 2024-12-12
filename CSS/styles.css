@@ -1,0 +1,50 @@
+#main-navbar{
+    background-color: #AB5A8C !important;
+}
+#secondary-navbar{
+    background-color: #EBB2DC !important;
+}
+#general-footer{
+    background-color: #AB5A8C;
+}
+#main-title{
+    text-align: center;
+    margin: 10px;
+}
+
+.footer-content{
+    text-align: left;
+}
+.footer-content-title{
+    font-size: x-large;
+}
+.footer-link{
+    color: white;
+    text-decoration: none;
+}
+.github-btn{
+    background-color: #AB5A8C;
+}
+.github-btn:hover{
+    background-color: #AB5A8C;
+}
+.in-btn{
+    background-color: #EBB2DC;
+}
+.in-btn:hover{
+    background-color: #EBB2DC;
+}
+.star-product{
+    color: white !important;
+    background-color: #CDA1EE;
+}
+.main-nav-link{
+    color: white;
+    text-decoration: underline;
+    font-size: x-large;
+}
+.secondary-nav-dropmenu{
+    color: white !important;
+    text-decoration: none;
+    font-size: x-large;
+}
