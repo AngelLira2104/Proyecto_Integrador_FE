@@ -1,3 +1,30 @@
+/* Lora Regular 400 al resto de la página */
+body {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+  /* Lora SemiBold 600 Italic para titulos y encabezados  */
+h2, h3, h4, h5, h6 {
+font-family: 'Lora', serif;
+font-style: italic;
+font-weight: 600;
+}
+/* Estilo único para h1 */
+h1 {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 40px; /* Más grande que otros encabezados */
+}
+/* Love ligth solo para letra del logo */
+#titulo-logo {
+    font-family: 'Love Light', sans-serif;
+    font-weight: normal; 
+    font-size: 35px;
+}
+
 #main-navbar{
     background-color: #AB5A8C !important;
 }
