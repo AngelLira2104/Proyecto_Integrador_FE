@@ -1,6 +1,3 @@
-alert("Página conectada");
-
-
 class validarContacto {
     nombre = "";
     primerApellido = "";

@@ -1,7 +1,3 @@
-const mainNavigation = document.getElementById("main-navbar");
-const secondaryNavigation = document.getElementById("secondary-navbar");
-const pageFooter = document.getElementById("general-footer");
-
 const urlLogo = new URL(location.origin+'/'+'IMG/LogoJardinDeFlores.webp');
 const urlIndex = new URL(location.origin+'/'+'index.html');
 const urlAbout = new URL(location.origin+'/'+'HTML/about.html');
@@ -9,7 +5,12 @@ const urlContact = new URL(location.origin+'/'+'HTML/contacto.html');
 
 
 window.addEventListener("load", function(event){
-    let mainNavContent = `<div class="container-fluid">
+    try {
+        const mainNavigation = document.getElementById("main-navbar");
+        const secondaryNavigation = document.getElementById("secondary-navbar");
+        const pageFooter = document.getElementById("general-footer");
+
+        let mainNavContent = `<div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
                 <!-- The logo image doesn't seem to fit right maybe try to change the width and height properties or change the logo -->
                 <img src="${urlLogo.pathname}" alt="Logo" width="58" height="48" class="d-inline-block align-text-top">
@@ -41,7 +42,7 @@ window.addEventListener("load", function(event){
                 </span>
             </div>
         </div>`;
-    let secondaryNavContent = `<li class="nav-item dropdown">
+        let secondaryNavContent = `<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle secondary-nav-dropmenu" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Flores</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Rosas</a></li>
@@ -83,7 +84,7 @@ window.addEventListener("load", function(event){
               <li><a class="dropdown-item" href="#">Personalizados</a></li>
             </ul>
         </li>`;
-    let footerContent = `<div class="container">
+        let footerContent = `<div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <!-- Footer content 1 Social Media Content-->
@@ -124,7 +125,17 @@ window.addEventListener("load", function(event){
                 </div>
             </div>
         </div>`;
-    mainNavigation.insertAdjacentHTML("beforeend", mainNavContent);
-    secondaryNavigation.insertAdjacentHTML("beforeend", secondaryNavContent);
-    pageFooter.insertAdjacentHTML("beforeend",footerContent);
+        if (mainNavigation != null){
+            mainNavigation.insertAdjacentHTML("beforeend", mainNavContent);
+        }
+        if (secondaryNavigation != null){
+            secondaryNavigation.insertAdjacentHTML("beforeend", secondaryNavContent);
+        }
+        if (pageFooter != null){
+            pageFooter.insertAdjacentHTML("beforeend",footerContent);
+        }
+    } catch (error) {
+        //No mostrar el error en la consola
+        console.log(error)
+    }
 });

@@ -21,44 +21,10 @@
 <body>
     <!-- Section for the main navbar -->
     <!-- I added the sticky-top class because I like more that the navbar is always visible so I don't have to scroll all the way up -->
-    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" id="main-navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
-                <!-- The logo image doesn't seem to fit right maybe try to change the width and height properties or change the logo -->
-                <img src="../IMG/LogoJardinDeFlores.webp" alt="Logo" width="58" height="48" class="d-inline-block align-text-top">
-        
-            </a>
-            <h1 id="titulo-logo">El Jardín Floral</h1>
-            <!-- The button with class navbar-toggler and its span are elements only visible when the menu collapses when the viewport reduces its size-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- The elements of the navigation bar begin here -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto p-2">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./HTML/about.html">Acerca de Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contáctanos</a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                    <ul>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Iniciar sesión</a>
-                        </li>
-                    </ul>
-                </span>
-            </div>
-        </div>
-    </nav>
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" id="main-navbar"></nav>
     <!---------------------------->
     <!-- Encabezado -->
-    <header class="bg-primary text-white text-center py-5" id="secondary-navbar">
+    <header class="bg-primary text-white text-center py-5" id="about-bar">
         <h1>Acerca de Nosotros</h1>
         <p>Este proyecto tiene como objetivo la creación de una tienda en línea para la florería "El Jardín Floral". El
             comercio electrónico (e-commerce) es una modalidad de venta que se ha popularizado en los últimos años,
@@ -233,50 +199,10 @@
     </section>
 
     <!------------- Footer ---------->
-    <footer class="text-white text-center py-3" id="general-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <!-- Footer content 1 Social Media Content-->
-                    <p class="footer-content-title">El Jardín Floral</p>
-                    <p>Síguenos en: </p>
-                    <a href="#" class="bi bi-twitter-x"></a>
-                    <a href="#" class="bi bi-facebook"></a>
-                    <a href="#" class="bi bi-instagram"></a>
-                </div>
-                <div class="col-md-3 footer-content">
-                    <!-- Footer content 2 Product Content-->
-                    <p class="footer-content-title">Productos</p>
-                    <ul class="list-unstyled">
-                        <li><a class="footer-link" href="#">Nueva Temporada</a></li>
-                        <li><a class="footer-link" href="#">Los Favoritos</a></li>
-                        <li><a class="footer-link" href="#">Ramos</a></li>
-                        <li><a class="footer-link" href="#">Eventos</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-content">
-                    <!-- Footer content 3 Company Content-->
-                    <p class="footer-content-title">Empresa</p>
-                    <ul class="list-unstyled">
-                        <li><a class="footer-link" href="#">Contáctanos</a></li>
-                        <li><a class="footer-link" href="#">Nosotros</a></li>
-                        <li><a class="footer-link" href="#">Nuestro servicios</a></li>
-                        <li><a class="footer-link" href="#">Políticas de privacidad</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-content">
-                    <!-- Footer content 4 Support Content-->
-                    <p class="footer-content-title">Soporte</p>
-                    <ul class="list-unstyled">
-                        <li><a class="footer-link" href="#">Preguntas</a></li>
-                        <li><a class="footer-link" href="#">Compras</a></li>
-                        <li><a class="footer-link" href="#">Envíos</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="text-white text-center py-3" id="general-footer"></footer>
     <!------------------------------->
+    <!-- Navigation JS-->
+    <script src="../JS/navigation.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Animaciones personalizadas -->

@@ -19,6 +19,7 @@ const regexTelefono = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
 
 btnenviar.addEventListener("click", e=>{
 e.preventDefault();
+/*
 if(!regexNombre.test(inputName.value)){
     alerta.style.display="block";
     inputName.style.border = "solid red medium";
@@ -40,6 +41,7 @@ if(!regexNombre.test(inputSecondSurName.value)){
     alerta3.style.display="none";
     inputSecondSurName.style.border = "";
 }
+*/
 if(!regexCorreo.test(inputEmail.value)){
     alerta4.style.display="block";
     inputEmail.style.border = "solid red medium";
