@@ -23,7 +23,8 @@
     <!---------------------Section for the highlight cards of products ------------>
     <main class="container">
         <h3 id="main-title">Contactanos</h3>
-        <form class="row g-3">
+        <div id="alert-container" class="mt-3"></div>
+        <form class="row g-3" id = "form">
             <!-- Primeros 3 campos del formulario-->
             <div class="col-md-4">
               <label for="inputName" class="form-label">Nombre:</label>
@@ -99,6 +100,7 @@
     <script src="../JS/navigation.js"></script>
     <script src="../JS/contacto_jmg.js"></script>
     <script src="../JS/validacion.js"></script>
+    <script src="../JS/script.js"></script>
     <!-- Animaciones personalizadas -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -114,6 +116,11 @@
             });
         });
     </script>
-        <script src="../JS/validacion.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+    <script type="text/javascript">
+      emailjs.init('Ubs8e-xvp0qtDK7eX')
+    </script>
 </body>
 </html>

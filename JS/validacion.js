@@ -19,6 +19,7 @@ const regexTelefono = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
 
 btnenviar.addEventListener("click", e=>{
 e.preventDefault();
+// let valid = true; // Variable para verificar si el formulario es válido
 /*
 if(!regexNombre.test(inputName.value)){
     alerta.style.display="block";
@@ -70,4 +71,63 @@ if(exampleFormControlTextarea1.value.length>500){
     alerta7.style.display="none";
     exampleFormControlTextarea1.style.border = "";
 }
+
+// Si todo está validado, enviamos el correo
+// if (valid) {
+//     sendEmail();
+// }
 });
+
+// // Función para mostrar alertas con Bootstrap
+// function showAlert(message, type) {
+//     const alertContainer = document.getElementById("alert-container");
+//     const alertHTML = `
+//       <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+//         ${message}
+//         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+//       </div>
+//     `;
+  
+//     alertContainer.innerHTML = alertHTML;
+//   }
+  
+//   // Función para enviar correo electrónico usando EmailJS
+//   function sendEmail() {
+//     const params = {
+//       nombre: inputName.value,
+//       apellido1: inputFirstSurName.value,
+//       apellido2: inputSecondSurName.value,
+//       correo: inputEmail.value,
+//       telefono: inputPhone.value,
+//       asunto: inputAbout.value,
+//       mensaje: exampleFormControlTextarea1.value,
+//     };
+  
+//     emailjs
+//       .send(
+//         "service_6c1x4po", 
+//         "template_3hj7cl3", 
+//         params, 
+//         "Ubs8e-xvp0qtDK7eX"
+//       )
+//       .then(() => {
+//         showAlert("¡El mensaje fue enviado con éxito!", "success");
+//         limpiarFormulario();
+//       })
+//       .catch((error) => {
+//         console.error("Error al enviar el correo: ", error);
+//         showAlert("Ocurrió un error al enviar el mensaje. Inténtalo de nuevo.", "danger");
+//       });
+//   }
+  
+//   // Función para limpiar el formulario
+//   function limpiarFormulario() {
+//     inputName.value = "";
+//     inputFirstSurName.value = "";
+//     inputSecondSurName.value = "";
+//     inputEmail.value = "";
+//     inputPhone.value = "";
+//     inputAbout.value = "";
+//     exampleFormControlTextarea1.value = "";
+//   }
+  
