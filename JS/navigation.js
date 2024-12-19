@@ -2,6 +2,7 @@ const urlLogo = new URL(location.origin+'/'+'IMG/LogoJardinDeFlores.webp');
 const urlIndex = new URL(location.origin+'/'+'index.html');
 const urlAbout = new URL(location.origin+'/'+'HTML/about.html');
 const urlContact = new URL(location.origin+'/'+'HTML/contacto.html');
+const urlProductos = new URL(location.origin+'/'+'HTML/edicionProducto.html');
 
 
 window.addEventListener("load", function(event){
@@ -31,6 +32,9 @@ window.addEventListener("load", function(event){
                     </li>
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" href="${urlContact.pathname}">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-link" href="${urlProductos.pathname}">Productos</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
