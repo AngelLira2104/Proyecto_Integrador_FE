@@ -3,7 +3,7 @@ const urlIndex = new URL(location.origin+'/'+'index.html');
 const urlAbout = new URL(location.origin+'/'+'HTML/about.html');
 const urlContact = new URL(location.origin+'/'+'HTML/contacto.html');
 const urlProductos = new URL(location.origin+'/'+'HTML/edicionProducto.html');
-
+const urlInicioSesion = new URL(location.origin+'/'+'HTML/inicioSesion.html');
 
 window.addEventListener("load", function(event){
     try {
@@ -40,7 +40,7 @@ window.addEventListener("load", function(event){
                 <span class="navbar-text">
                     <ul>
                         <li class="nav-item">
-                            <a href="#" class="nav-link main-nav-link">Iniciar sesión</a>
+                            <a href="${urlInicioSesion.pathname}" class="nav-link main-nav-link">Iniciar sesión</a>
                         </li>
                     </ul>
                 </span>
