@@ -13,7 +13,7 @@
    <link rel="icon" href="./IMG/favicon.ico" type="image/x-icon">
        <!-- Archivo CSS personalizado -->
        <link rel="stylesheet" href="../CSS/styles.css">
-    <title>Login</title>
+    <title>Document</title>
 </head>
 <body>
     <!-- Section for the main navbar -->
@@ -22,13 +22,24 @@
     <!---------------------------->
 <!-- Inicio Login -->
       <div class="wrapper">
-        <div class="login_box">
-            <img src="../IMG/LogoJardinDeFlores.webp" alt="" class="logo">
+        <div class="login_boxR">
+            <img src="../IMG/LogoJardinDeFlores.webp" alt="" class="logoR">
             <div class="login-header">
-                <span>Sesión</span>
+                <span>Regístrate</span>
             </div>
             <div class="input-box">
-                <label for="user" class="label">Usuario</label>
+                <label for="user" class="label">Nombre</label>
+                <input type="text" id="user" class="input-fiel" required>
+                <i class="bx bx-user icon"></i>
+            </div>
+            <div class="inputR">
+                <label for="user" class="label">Apellidos</label><br></BR>
+                <input type="text" id="user" class="ApellidoP" required>
+                <input type="text" id="user" class="ApellidoM" required>
+                <i class="bx bx-user icon"></i>
+            </div>
+            <div class="input-box">
+                <label for="user" class="label">Correo electronico</label>
                 <input type="text" id="user" class="input-fiel" required>
                 <i class="bx bx-user icon"></i>
             </div>
@@ -37,11 +48,12 @@
                 <input type="password" id="pass" class="input-fiel" required>
                 <i class="bx bx-lock-alt icon"></i>
             </div>
-            <div class="register">
-                <a href="./registro.html">Registrarse</a><br>
-                <a href="./olvcontraseña">Olvide mi contraseña</a>
+            <div class="input-box">
+                <label for="pass" class="label">Confirma contraseña</label>
+                <input type="password" id="pass" class="input-fiel" required>
+                <i class="bx bx-lock-alt icon"></i>
             </div>
-            <button class="boton">Registrase</button>
+        <button class="botonR">Registrase</button>
         </div>
       </div>
       <!-- Fin del Login -->
@@ -77,5 +89,6 @@ src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script
 <script type="text/javascript">
   emailjs.init('Ubs8e-xvp0qtDK7eX')
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
