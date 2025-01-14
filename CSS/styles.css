@@ -9,20 +9,20 @@ body {
 h2, h3, h4, h5, h6 {
 font-family: 'Lora', serif;
 font-style: italic;
-font-weight: 600;
+font-weight: 300;
 }
 /* Estilo único para h1 */
 h1 {
     font-family: 'Lora', serif;
     font-style: italic;
-    font-weight: 600;
-    font-size: 40px; /* Más grande que otros encabezados */
+    font-weight: 400;
 }
 /* Love ligth solo para letra del logo */
 #titulo-logo {
     font-family: 'Love Light', sans-serif;
     font-weight: normal; 
     font-size: 35px;
+    color: white;
 }
 
 #main-navbar{
@@ -70,16 +70,18 @@ h1 {
 }
 .main-nav-link{
     color: white;
-    text-decoration: underline;
-    font-size: x-large;
+    font-size: large;
+}
+.main-nav-link:hover{
+    color: white;
+    text-decoration-line: underline;
+    font-weight: bold;
 }
 .secondary-nav-dropmenu{
     color: white !important;
     text-decoration: none;
-    font-size: x-large;
+    font-size: large;
 }
-
-
 /*correción imagenes about*/
 img.rounded-circle {
     width: 150px; 
