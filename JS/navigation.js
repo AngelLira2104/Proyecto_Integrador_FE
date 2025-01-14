@@ -25,7 +25,7 @@ window.addEventListener("load", function(event){
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto p-2">
                     <li class="nav-item">
-                        <a class="nav-link active main-nav-link" aria-current="page" href="${urlIndex.pathname}">Inicio</a>
+                        <a class="nav-link main-nav-link" aria-current="page" href="${urlIndex.pathname}">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" href="${urlAbout.pathname}">Acerca de Nosotros</a>
@@ -36,13 +36,9 @@ window.addEventListener("load", function(event){
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" href="${urlProductos.pathname}">Productos</a>
                     </li>
-                </ul>
-                <span class="navbar-text">
-                    <ul>
                         <li class="nav-item">
                             <a href="${urlInicioSesion.pathname}" class="nav-link main-nav-link">Iniciar sesión</a>
                         </li>
-                    </ul>
                 </span>
             </div>
         </div>`;
