@@ -14,7 +14,7 @@ class validarContacto {
 
     // Validación del nombre
     setName(nombre) {
-        const regex = /^[a-zA-Z]{2,15}$/; // Solo se aceptan letras minúsculas y mayúsculas, y también se aceptan nombres entre 2 y 15 caracteres        
+        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,15}$/u;  // Solo se aceptan letras minúsculas y mayúsculas, y también se aceptan nombres entre 2 y 15 caracteres        
         if (regex.test(nombre)){
             this.nombre = nombre; // El nombre ingresado se almacena en 'nombre'
             return true; // Indica que el nombre es válido
@@ -25,7 +25,7 @@ class validarContacto {
     }
 
     setFirstSurname(primerApellido) {
-        const regex = /^[a-zA-Z]{2,15}$/; 
+        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,15}$/u; 
         if (regex.test(primerApellido)){
             this.primerApellido = primerApellido; 
             return true; 
@@ -36,7 +36,7 @@ class validarContacto {
     }
 
     setSecondSurname(segundoApellido) {
-        const regex = /^[a-zA-Z]{2,15}$/; 
+        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,15}$/u; 
         if (regex.test(segundoApellido)){
             this.segundoApellido = segundoApellido; 
             return true; 

@@ -1,20 +1,21 @@
-const btn = document.getElementById('btnenviar');
+const btn = document.getElementById("btnenviar");
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
+document.getElementById("form").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-   btn.value = 'Sending...';
+  btn.value = "Sending...";
 
-   const serviceID = 'default_service';
-   const templateID = 'template_3hj7cl3';
+  const serviceID = "service_hoodrj5";
+  const templateID = "template_3hj7cl3";
 
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
+  emailjs.sendForm(serviceID, templateID, this).then(
+    () => {
+      btn.value = "Send Email";
+      // alert('Sent!');
+    },
+    (err) => {
+      btn.value = "Send Email";
       alert(JSON.stringify(err));
-    });
+    }
+  );
 });
