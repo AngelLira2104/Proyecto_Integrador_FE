@@ -44,6 +44,9 @@ window.addEventListener("load", function(event){
                         <li class="nav-item">
                             <a href="${urlInicioSesion.pathname}" class="nav-link main-nav-link">Iniciar sesión</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link main-nav-link carro" id="carritos" href="${urlInicioSesion.pathname}">Carrito<img src="../IMG/Carrito.png" alt="" id="carrito"></a>
+                        </li>
                 </span>
             </div>
         </div>`;
