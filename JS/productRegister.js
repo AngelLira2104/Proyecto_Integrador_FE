@@ -17,6 +17,8 @@ window.addEventListener("load", function(){
         var dntDisplay;
         alertValidacionesTexto.innerHTML = "";
         alertValidaciones.style.display = "none";
+        alertExitoTexto.innerHTML = "";
+        alertExito.style.display = "none";
         editForm.style.display = "none";
         if (this.value == 1) {
             display = 1;

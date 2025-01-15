@@ -14,6 +14,7 @@
 
     <!-- Archivo CSS personalizado -->
     <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/formularioEdicion.css">
 </head>
 <body>
  <!-- Section for the main navbar -->
@@ -27,10 +28,10 @@
               <legend>Registrar / Editar Productos</legend>    
               <p>Selecciona accion:</p>
             <input type="radio" class="btn-check" name="form" id="option1" autocomplete="off" checked value="1">
-            <label class="btn btn-secondary" for="option1">Registrar</label>
+            <label class="btn btn-secondary" for="option1" id="Registrar">Registrar</label>
 
             <input type="radio" class="btn-check" name="form" id="option2" autocomplete="off" value="2">
-            <label class="btn btn-secondary" for="option2">Editar</label>
+            <label class="btn btn-secondary" for="option2" id="Editar">Editar</label>
             </fieldset><br>
         </form>
         <!-- End of the selection form -->
@@ -127,7 +128,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success" id="btnEditar">Editar</button>
-                    <button type="submit" class="btn btn-danger" id="btnEditar">Eliminar</button>  
+                    <button type="submit" class="btn btn-danger" id="btnEliminar">Eliminar</button>  
                 </form>
             </div>
         </form>
