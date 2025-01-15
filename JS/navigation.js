@@ -2,7 +2,8 @@ const urlLogo = new URL(location.origin+'/'+'IMG/LogoJardinDeFlores.webp');
 const urlIndex = new URL(location.origin+'/'+'index.html');
 const urlAbout = new URL(location.origin+'/'+'HTML/about.html');
 const urlContact = new URL(location.origin+'/'+'HTML/contacto.html');
-const urlProductos = new URL(location.origin+'/'+'HTML/edicionProducto.html');
+const urlProductos = new URL(location.origin+'/'+'HTML/productos.html');
+const urlEdicionProductos = new URL(location.origin+'/'+'HTML/edicionProducto.html');
 const urlInicioSesion = new URL(location.origin+'/'+'HTML/inicioSesion.html');
 
 window.addEventListener("load", function(event){
@@ -35,6 +36,10 @@ window.addEventListener("load", function(event){
                     </li>
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" href="${urlProductos.pathname}">Productos</a>
+                    </li>
+                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-link" href="${urlEdicionProductos.pathname}">Edición de Productos</a>
                     </li>
                         <li class="nav-item">
                             <a href="${urlInicioSesion.pathname}" class="nav-link main-nav-link">Iniciar sesión</a>
