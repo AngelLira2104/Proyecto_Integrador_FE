@@ -6,7 +6,7 @@ const productImage = document.getElementById("inputImage");
 const productStock = document.getElementById("inputStock");
 const productUnitPrice = document.getElementById("inputUnitPrice");
 const duplicateIdAlert = document.getElementById("alertIdDuplicado");
-const duplicateIdAlertText = document.getElementById("alertIdDuplicado");
+const duplicateIdAlertText = document.getElementById("alertIdDuplicadotext");
 
 let productos = [];
 

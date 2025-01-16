@@ -11,6 +11,10 @@ const editDescription = document.getElementById("editDescription");
 const editImage = document.getElementById("editImage");
 const editStock = document.getElementById("editStock");
 const editUnitPrice = document.getElementById("editUnitPrice");
+const alertDuplicadoIDEdit = document.getElementById("alertIdDuplicado2");
+const alertDuplicadoIDtextEdit = document.getElementById("alertIdDuplicadotext2");
+const alertEmptySearch = document.getElementById("alertEmpySearch");
+const alertEmptySearchText = document.getElementById("alertEmptySearchText");
 const btnEditar = document.getElementById("btnEditar");
 
 btnBuscarProducto.addEventListener("click", function(event){
@@ -19,32 +23,39 @@ btnBuscarProducto.addEventListener("click", function(event){
     //Here starts the process by searching for the input product
     //if the product does not exist in the data base (in this case localStorage)
     //Show an alert letting know the user it does not exist and should register it.
-    if(localStorage.getItem("productos") != null){
-        alertValidacionesTexto.innerHTML = "";
-        alertValidaciones.style.display = "none";
-        //This will change a bit in the future with the add of a BD
-        productos = JSON.parse(localStorage.getItem("productos"));
-        for (let i = 0; i < productos.length; i++){
-            if(productos[i]["Nombre"] === SearchName.value || productos[i]["ID"] == SearchName.value){
-                editForm.style.display = "block";
-                editName.value = productos[i]["Nombre"];
-                editID.value = productos[i]["ID"];
-                editDescription.value = productos[i]["Descripcion"];
-                editImage.value = productos[i]["Imagen"];
-                editStock.value = productos[i]["Existencias"];
-                editUnitPrice.value = productos[i]["PrecioUnitario"];
-                bandera = true;
-                break;
+    if (SearchName.value.length > 0){
+        if(localStorage.getItem("productos") != null){
+            alertValidacionesTexto.innerHTML = "";
+            alertValidaciones.style.display = "none";
+            alertEmptySearch.style.display = "none";
+            alertEmptySearchText.innerHTML = "";
+            //This will change a bit in the future with the add of a BD
+            productos = JSON.parse(localStorage.getItem("productos"));
+            for (let i = 0; i < productos.length; i++){
+                if(productos[i]["Nombre"] === SearchName.value || productos[i]["ID"] == SearchName.value){
+                    editForm.style.display = "block";
+                    editName.value = productos[i]["Nombre"];
+                    editID.value = productos[i]["ID"];
+                    editDescription.value = productos[i]["Descripcion"];
+                    editImage.value = productos[i]["Imagen"];
+                    editStock.value = productos[i]["Existencias"];
+                    editUnitPrice.value = productos[i]["PrecioUnitario"];
+                    bandera = true;
+                    break;
+                }
             }
-        }
-        if (!bandera){
-            alertValidacionesTexto.innerHTML = "<strong>El producto ingresado no existe.</strong>";
+            if (!bandera){
+                alertValidacionesTexto.innerHTML = "<strong>El producto ingresado no existe.</strong>";
+                alertValidaciones.style.display = "block";
+                SearchName.focus();
+            }
+        } else {
+            alertValidacionesTexto.innerHTML = "<strong>No existen productos registrados.</strong>";
             alertValidaciones.style.display = "block";
-            SearchName.focus();
         }
     } else {
-        alertValidacionesTexto.innerHTML = "<strong>No existen productos registrados.</strong>";
-        alertValidaciones.style.display = "block";
+        alertEmptySearchText.innerHTML = "<strong>Ingrese un criterio de busqueda (Nombre del producto o ID)</strong>";
+        alertEmptySearch.style.display = "block";
     }
 });
 
@@ -63,20 +74,22 @@ btnEditar.addEventListener("click", function(event){
         editName.style.border = "solid red medium";
         isValid = false;
     }
-    if (isNaN(productID.value)){
+    if (isNaN(editID.value)){
         productID.style.border = "solid red medium";
         isValid = false;
     }
-    if(productos.find(producto => producto.ID === productID.value) !== undefined){
-        duplicateIdAlert.style.display = "block";
-        duplicateIdAlertText.innerHTML = "<strong>No puede registrar productos con el mismo ID</strong>";
-        isValid = false;
+    if(productos.find(producto => producto.ID === editID.value) !== undefined){
+        if (productos.find(producto => producto.ID === editID.value)["Nombre"] !== editName.value){
+            alertDuplicadoIDEdit.style.display = "block";
+            alertDuplicadoIDtextEdit.innerHTML = "<strong>No puede registrar productos con el mismo ID</strong>";
+            isValid = false;
+        }
     }
-    if (productDescription.value.length < 4){
+    if (editDescription.value.length < 4){
         productDescription.style.border = "solid red medium";
         isValid = false;
     }
-    if (productImage.value.length < 4){
+    if (editImage.value.length < 4){
         productImage.style.border = "solid red medium";
         isValid = false;
     }
@@ -117,9 +130,9 @@ btnEditar.addEventListener("click", function(event){
         localStorage.setItem("productos", JSON.stringify(productos));
         SearchName.value = "";
         editForm.style.display = "none";
-        duplicateIdAlert.style.display = "none";
+        alertDuplicadoIDEdit.style.display = "none";
+        alertDuplicadoIDtextEdit.innerHTML = "";
         alertExitoTexto.innerHTML = "<strong>El producto fue modificado con exito.</strong>";
-        duplicateIdAlertText.innerHTML = "";
         alertExito.style.display = "block";
     }
 });
