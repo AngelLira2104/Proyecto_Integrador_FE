@@ -6,8 +6,9 @@ const btnBuscarProducto = document.getElementById("btnBuscarProducto");
 const SearchName = document.getElementById("SearchName");
 const editForm = document.getElementById("editForm");
 const editName = document.getElementById("editName");
+const editID = document.getElementById("editID");
 const editDescription = document.getElementById("editDescription");
-//Here should be a constant for the image but haven't figure yet how to manage files
+const editImage = document.getElementById("editImage");
 const editStock = document.getElementById("editStock");
 const editUnitPrice = document.getElementById("editUnitPrice");
 const btnEditar = document.getElementById("btnEditar");
@@ -24,10 +25,12 @@ btnBuscarProducto.addEventListener("click", function(event){
         //This will change a bit in the future with the add of a BD
         productos = JSON.parse(localStorage.getItem("productos"));
         for (let i = 0; i < productos.length; i++){
-            if(productos[i]["Nombre"] === SearchName.value){
+            if(productos[i]["Nombre"] === SearchName.value || productos[i]["ID"] == SearchName.value){
                 editForm.style.display = "block";
                 editName.value = productos[i]["Nombre"];
+                editID.value = productos[i]["ID"];
                 editDescription.value = productos[i]["Descripcion"];
+                editImage.value = productos[i]["Imagen"];
                 editStock.value = productos[i]["Existencias"];
                 editUnitPrice.value = productos[i]["PrecioUnitario"];
                 bandera = true;
@@ -60,6 +63,23 @@ btnEditar.addEventListener("click", function(event){
         editName.style.border = "solid red medium";
         isValid = false;
     }
+    if (isNaN(productID.value)){
+        productID.style.border = "solid red medium";
+        isValid = false;
+    }
+    if(productos.find(producto => producto.ID === productID.value) !== undefined){
+        duplicateIdAlert.style.display = "block";
+        duplicateIdAlertText.innerHTML = "<strong>No puede registrar productos con el mismo ID</strong>";
+        isValid = false;
+    }
+    if (productDescription.value.length < 4){
+        productDescription.style.border = "solid red medium";
+        isValid = false;
+    }
+    if (productImage.value.length < 4){
+        productImage.style.border = "solid red medium";
+        isValid = false;
+    }
     if (Number(editStock.value) <= 0 || isNaN(editStock.value)){
         editStock.style.border = "solid red medium";
         isValid = false;
@@ -76,8 +96,14 @@ btnEditar.addEventListener("click", function(event){
                 if(productos[i]["Nombre"] != editName.value){
                     productos[i]["Nombre"] = editName.value;
                 }
+                if(productos[i]["ID"] != editID.value){
+                    productos[i]["ID"] = editID.value;
+                }
                 if(productos[i]["Descripcion"] != editDescription.value){
                     productos[i]["Descripcion"] = editDescription.value;
+                }
+                if(productos[i]["Imagen"] != editImage.value){
+                    productos[i]["Imagen"] = editImage.value;
                 }
                 if(productos[i]["Existencias"] != editStock.value){
                     productos[i]["Existencias"] = editStock.value;
@@ -91,7 +117,9 @@ btnEditar.addEventListener("click", function(event){
         localStorage.setItem("productos", JSON.stringify(productos));
         SearchName.value = "";
         editForm.style.display = "none";
+        duplicateIdAlert.style.display = "none";
         alertExitoTexto.innerHTML = "<strong>El producto fue modificado con exito.</strong>";
+        duplicateIdAlertText.innerHTML = "";
         alertExito.style.display = "block";
     }
 });
