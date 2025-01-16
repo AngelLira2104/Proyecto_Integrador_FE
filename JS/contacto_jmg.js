@@ -184,4 +184,3 @@ document.addEventListener("DOMContentLoaded", () => { // Esperamos a que el DOM 
         }  
     });
 });
-getelem

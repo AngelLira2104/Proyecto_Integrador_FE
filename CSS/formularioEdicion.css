@@ -22,3 +22,9 @@
     background-color: #CDA1EE !important;
     border: #CDA1EE;
 }
+
+.required::after {
+    content: " *";
+    color: red;
+    font-weight:bold;
+  }
