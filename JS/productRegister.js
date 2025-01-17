@@ -5,13 +5,13 @@ const productDescription = document.getElementById("inputDescription");
 const productImage = document.getElementById("inputImage");
 const productStock = document.getElementById("inputStock");
 const productUnitPrice = document.getElementById("inputUnitPrice");
-const duplicateIdAlert = document.getElementById("alertDuplicado");
-const duplicateIdAlertText = document.getElementById("alertDuplicadotext");
+const duplicateIdAlert = document.getElementById("alertIdDuplicado");
+const duplicateIdAlertText = document.getElementById("alertIdDuplicado");
 
-let productos = [];
+let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 window.addEventListener("load", function () {
-  var sz = document.forms["formSelector"].elements["form"];
+  var sz = document.forms['formSelector'].elements['form'];
   // loop through list
 
   for (var i = 0, len = sz.length; i < len; i++) {
@@ -32,8 +32,8 @@ window.addEventListener("load", function () {
         display = 2;
         dntDisplay = 1;
       }
-      document.getElementById("form" + display).style.display = "block";
-      document.getElementById("form" + dntDisplay).style.display = "none";
+      document.getElementById('form' + display).style.display = "block";
+      document.getElementById('form' + dntDisplay).style.display = "none";
     };
   }
 });
@@ -49,6 +49,7 @@ btnRegistrar.addEventListener("click", function (event) {
   productName.style.border = "";
   productStock.style.border = "";
   productUnitPrice.style.border = "";
+  productID.style.border = "";
 
   //RegExp for validations - JMG
   const idRegex = /^[a-zA-Z0-9]{1,12}$/;
@@ -85,21 +86,25 @@ btnRegistrar.addEventListener("click", function (event) {
     productImage.style.border = "solid red medium";
     isValid = false;
   }
-  if (
-    productos.find((producto) => producto.ID === productID.value) !== undefined
-  ) {
-    duplicateIdAlert.classList.remove("d-none"); // Mostrar alerta
-    duplicateIdAlert.innerHTML = `
-    <strong>Error:</strong> El ID "${productID.value}" ya está registrado.
-    <a href="#" class="alert-link">Corrige el ID</a>.
-`;
-    productID.style.border = "solid red medium";
-    isValid = false;
 
-    setTimeout(() => {
-        duplicateIdAlert.classList.add("d-none");
-    }, 5000);
-  }
+  // if (
+  //   productos.find((producto) => producto.ID === productID.value) !== undefined
+  // ) {
+  //   duplicateIdAlert.classList.remove("d-none");
+  //   duplicateIdAlert.innerHTML = `
+  //     <strong>Error:</strong> El ID "${productID.value}" ya está registrado.
+  //     <a href="#" class="alert-link">Corrige el ID</a>.
+  //   `;
+  //   //productID.style.border = "solid red medium";
+  //   isValid = false;
+
+  //   //Ocultar la alerta automáticamente después de 5 segundos
+  //   setTimeout(() => {
+  //     duplicateIdAlert.classList.add("d-none");
+  //   }, 5000);
+  // } else {
+  //   duplicateIdAlert.classList.add("d-none");
+  // }
 
   /*
     if (productName.value.length < 4){
