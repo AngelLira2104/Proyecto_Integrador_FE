@@ -69,7 +69,9 @@
             <div class="row mb-3">
                 <label for="inputImage" class="col-sm-2 col-form-label required">Imagen</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputImage" placeholder="URL de la imagen del producto">
+                    <input  type="file" class="form-control" id="inputImage" hidden="hidden" ></input>
+                    <button type="button" id="inputImagee">subir</button>
+                    <span id="inputImag">URL de la imagen del producto</span>
                 </div>
             </div>
             <div class="row mb-3">
@@ -174,6 +176,8 @@
     <script src="../JS/productRegister.js"></script>
     <script src="../JS/productEdition.js"></script>
     <!-- Animaciones personalizadas -->
+    <script src="https://upload-widget.cloudinary.com/latest/global/all.js" type="text/javascript"></script>  
+    <script src="../JS/servicio_img.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const headers = document.querySelectorAll("h3");
