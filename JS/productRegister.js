@@ -8,7 +8,7 @@ const productUnitPrice = document.getElementById("inputUnitPrice");
 const duplicateIdAlert = document.getElementById("alertDuplicado");
 const duplicateIdAlertText = document.getElementById("alertDuplicadotext");
 
-let productos = JSON.parse(localStorage.getItem("productos")) || [];
+let productos = [];
 
 window.addEventListener("load", function () {
   var sz = document.forms["formSelector"].elements["form"];
