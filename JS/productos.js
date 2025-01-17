@@ -1,12 +1,5 @@
 // Carga productos de localStorage y los muestra
 const productos = JSON.parse(localStorage.getItem("productos")) || [];
-productos.forEach(producto => {
-    addItem({
-        name: producto.Nombre,
-        img: producto.Imagen,
-        description: producto.Descripcion
-    });
-});
 
 function addItem(item) {
     const itemHTML = `
@@ -23,3 +16,24 @@ function addItem(item) {
     const itemsContainer = document.getElementById("list-items");
     itemsContainer.insertAdjacentHTML("beforeend", itemHTML);
 }
+
+function getData(){
+    fetch('../JSON/productos.json').then((response) => {
+        response.json().then((res) => {
+            localStorage.setItem("productos", JSON.stringify(res.productos));
+            //console.log(res.productos);
+        });
+    }).catch((err) => {
+        console.log("Error al cargar el archivo JSON");
+    });
+}
+
+getData();
+
+productos.forEach(producto => {
+    addItem({
+        name: producto.Nombre,
+        img: producto.Imagen,
+        description: producto.Descripcion
+    });
+});

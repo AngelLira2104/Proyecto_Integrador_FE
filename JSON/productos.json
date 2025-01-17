@@ -1,0 +1,76 @@
+{
+    "productos": [
+        {
+            "Nombre": "Tulipanes",
+            "ID" : "0001",
+            "Descripcion": "En el lenguaje de las flores, los tulipanes pueden expresar una gran variedad de emociones, como el amor, la amistad, la alegría, la admiración, la pasión, la pureza, la inocencia, el orgullo, la dignidad, el éxito, entre otras.",
+            "Imagen": "https://media.admagazine.com/photos/6511419d5e83245788937f4a/1:1/w_2250,h_2250,c_limit/tulipanes-cuidados-historia.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Gerberas",
+            "ID": "0002",
+            "Descripcion": "En el lenguaje de las flores, las gerberas simbolizan alegría, pureza, inocencia, amistad, felicidad y admiración. También pueden expresar la intensidad de los sentimientos.",
+            "Imagen": "https://florescercademi.mx/wp-content/uploads/2022/12/gerberas-rojas.webp",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Dalias",
+            "ID": "0003",
+            "Descripcion": "En el lenguaje de las flores, la dalia simboliza la elegancia, la fuerza, la dignidad, la creatividad, la positividad y el crecimiento. También puede representar el amor eterno, la belleza, la bondad y la fuerza interior.",
+            "Imagen": "https://content.elmueble.com/medio/2024/06/21/consejos-para-cultivar-dalias-en-maceta-para-que-produzcan-abundantes-flores_898ff993_240621105216_900x900.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Orquideas",
+            "ID" : "0004",
+            "Descripcion": "Las orquídeas suelen considerarse un símbolo de feminidad, ya que su delicadeza y refinada belleza se asocian a la belleza femenina. Además, las orquídeas suelen regalarse a las mujeres en ocasiones especiales, como el Día de la Madre, San Valentín o los cumpleaños, simbolizando amor y afecto.",
+            "Imagen": "https://verbenaflores.com/cdn/shop/files/OrquideaMorada1-Frontal-Verbena_1a14745e-c76b-40a3-b0d9-9a13bb742180.jpg?v=1714501928&width=1946",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Girasoles",
+            "ID" : "0005",
+            "Descripcion": "En el lenguaje de las flores, el girasol simboliza la felicidad, la alegría, el positivismo, la vitalidad, la energía, la buena suerte, la salud y la esperanza. También puede representar el amor, la admiración, la honestidad y la transparencia.",
+            "Imagen": "https://ponchycaprico.com/cdn/shop/products/Domo-de-Girasoles--Ponch-_-Caprico.jpg?v=1691270625&width=1445",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Rosas Rojas",
+            "ID" : "0006",
+            "Descripcion": "Las rosas rojas simbolizan amor apasionado e intenso, y son un lenguaje universal para expresar sentimientos románticos. También pueden representar respeto y admiración.",
+            "Imagen": "https://rosaprima.nyc3.cdn.digitaloceanspaces.com/Hot_Paris_Conceptual_View.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Hortencias",
+            "ID" : "0007",
+            "Descripcion": "En el lenguaje de las flores, la hortensia puede significar gratitud, comprensión, amor, respeto, admiración, pureza, sinceridad, felicidad, amistad, confianza y paz.",
+            "Imagen": "https://jardineriasanchez.com/wp-content/uploads/2022/05/hortensias.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Lirios",
+            "ID" : "0008",
+            "Descripcion": "El lirio (Lilium) es una flor que puede tener diferentes significados dependiendo de su color y de la cultura en la que se encuentre. Los lirios blancos simbolizan pureza, inocencia y belleza.",
+            "Imagen": "https://chapomart.com.mx/2264-large_default/vara-de-lily-blanca-66cm-altura.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Gypsophila",
+            "ID" : "0009",
+            "Descripcion": "La gipsófila simboliza pureza, inocencia y eternidad. En muchas culturas occidentales, es común en bodas y ceremonias religiosas, representando los nuevos comienzos y la infinita pureza del amor.",
+            "Imagen": "https://th.bing.com/th/id/OIP.nISjaMuPEpql-3zobZcAFQHaE8?rs=1&pid=ImgDetMain",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
+        }
+    ]
+}
