@@ -28,7 +28,9 @@ function getData(){
     });
 }
 
-getData();
+if (productos.length === 0){
+    getData();
+} 
 
 productos.forEach(producto => {
     addItem({
