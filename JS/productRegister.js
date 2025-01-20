@@ -47,9 +47,10 @@ btnRegistrar.addEventListener("click", function (event) {
   productStock.value = productStock.value.trim();
   productUnitPrice.value = productUnitPrice.value.trim();
   productName.style.border = "";
+  productID.style.border = "";
+  productDescription.style.border = "";
   productStock.style.border = "";
   productUnitPrice.style.border = "";
-  productID.style.border = "";
 
   //RegExp for validations - JMG
   const idRegex = /^[a-zA-Z0-9]{1,12}$/;
@@ -87,20 +88,27 @@ btnRegistrar.addEventListener("click", function (event) {
     isValid = false;
   }
 
+  if (productos.find((producto) => producto.ID === productID.value)) {
+    duplicateIdAlert.classList.remove("d-none");
+    productID.style.border = "solid red medium";
+    setTimeout(() => duplicateIdAlert.classList.add("d-none"), 5000);
+    return; // Salir sin registrar
+}
+
   // if (
   //   productos.find((producto) => producto.ID === productID.value) !== undefined
   // ) {
   //   duplicateIdAlert.classList.remove("d-none");
   //   duplicateIdAlert.innerHTML = `
-  //     <strong>Error:</strong> El ID "${productID.value}" ya está registrado.
-  //     <a href="#" class="alert-link">Corrige el ID</a>.
+  //   <strong>Error:</strong> El ID "${productID.value}" ya está registrado.
+  //   <a href="#" class="alert-link">Corrige el ID</a>.
   //   `;
-  //   //productID.style.border = "solid red medium";
+  // productID.style.border = "solid red medium";
   //   isValid = false;
 
-  //   //Ocultar la alerta automáticamente después de 5 segundos
+  // //Ocultar la alerta automáticamente después de 5 segundos
   //   setTimeout(() => {
-  //     duplicateIdAlert.classList.add("d-none");
+  //   duplicateIdAlert.classList.add("d-none");
   //   }, 5000);
   // } else {
   //   duplicateIdAlert.classList.add("d-none");
