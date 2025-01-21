@@ -116,8 +116,8 @@ window.addEventListener("load", function(event){
                     <!-- Footer content 3 Company Content-->
                     <p class="footer-content-title">Empresa</p>
                     <ul class="list-unstyled">
-                        <li><a class="footer-link" href="#">Contáctanos</a></li>
-                        <li><a class="footer-link" href="#">Nosotros</a></li>
+                        <li><a class="footer-link" href="${urlContact.pathname}">Contáctanos</a></li>
+                        <li><a class="footer-link" href="${urlAbout.pathname}">Nosotros</a></li>
                         <li><a class="footer-link" href="#">Nuestro servicios</a></li>
                         <li><a class="footer-link" href="#">Políticas de privacidad</a></li>
                     </ul>
