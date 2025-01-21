@@ -23,35 +23,46 @@
 <!-- Inicio Login -->
       <div class="wrapper">
         <div class="login_boxR">
-            <img src="../IMG/LogoJardinDeFlores.webp" alt="" class="logoR">
             <div class="login-header">
                 <span>Regístrate</span>
             </div>
+            <div class="container-fluid "><p style="font-size: smaller; color: black;">Los campos con los asteriscos son obligatorios</p style="font-size: smaller;"></div>
             <div class="input-box">
-                <label for="user" class="label">Nombre</label>
-                <input type="text" id="user" class="input-fiel" required>
+                <label for="user" class="label">Nombre*</label>
+                <input type="text" id="userNombre" class="input-fiel" required placeholder="Nombre(s)">
                 <i class="bx bx-user icon"></i>
+                <div class="mensaje-error error-nombre alert-danger">El nombre es inválido.*</div>
             </div>
             <div class="inputR">
-                <label for="user" class="label">Apellidos</label><br></BR>
-                <input type="text" id="user" class="ApellidoP" required>
-                <input type="text" id="user" class="ApellidoM" required>
+                <label for="userApellido1" class="label">Primer apellido*</label>
+                <label for="userApellido2" class="label">Segundo apellido</label><br>
+                <input type="text" id="userApellido1" class="ApellidoP" required placeholder="Primer apellido">
+                <input type="text" id="userApellido2" class="ApellidoM" required placeholder="Segundo apellido">
                 <i class="bx bx-user icon"></i>
+                <div class="mensaje-error error-appellido">El apellido es inválido*</div>
             </div>
             <div class="input-box">
-                <label for="user" class="label">Correo electronico</label>
-                <input type="text" id="user" class="input-fiel" required>
+                <label for="user" class="label">Correo electrónico*</label>
+                <input type="text" id="user" class="input-fiel" required placeholder="Correo electrónico">
                 <i class="bx bx-user icon"></i>
+                <div class="mensaje-error error-email">Introduce un correo válido.*</div>
             </div>
             <div class="input-box">
-                <label for="pass" class="label">Contraseña</label>
-                <input type="password" id="pass" class="input-fiel" required>
+                <label for="pass" class="label">Contraseña*</label>
+                <input type="password" id="pass" class="input-fiel" required placeholder="Debe contener de 8-20 caracteres...">
                 <i class="bx bx-lock-alt icon"></i>
+                <div class="mensaje-error error-contraseña">La contraseña no tiene los requerimientos necesarios.*</div>
+
+                <div><ul>
+                    <li>La contraseña debe contener de 8 a 20 caracteres.</li>
+                    <li>Puede contener números, letras y caracteres especiales.</li>
+                </ul></div>
             </div>
             <div class="input-box">
-                <label for="pass" class="label">Confirma contraseña</label>
-                <input type="password" id="pass" class="input-fiel" required>
+                <label for="pass" class="label">Confirma contraseña*</label>
+                <input type="password" id="pass" class="input-fiel" required placeholder="Repite la contraseña">
                 <i class="bx bx-lock-alt icon"></i>
+                <div class="mensaje-error error-contraseña2">No es la misma contraseña.*</div>
             </div>
         <button class="botonR">Registrase</button>
         </div>
