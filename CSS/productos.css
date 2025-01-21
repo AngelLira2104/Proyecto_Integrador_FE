@@ -1,23 +1,35 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Lora", serif ;
+}
 .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px 40px !important;
-    padding: 20px;
+    padding: 40px;
     margin-bottom: 100px;
+    margin-top: 300px !important; 
 }
+
+#list-items {
+    margin-top: 50px !important;
+}
+
 
 .card {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
-    max-width: 500px;
+    max-width: 600px;
     margin: auto;
     background-color: #f4f4f4;
     border: 1px solid #ccc;
     text-align: center;
-    min-height: 200px;
-    height: 400px;
+    min-height: 400px;
+    height: 550px;
     position: relative;
 }
 
@@ -29,17 +41,16 @@
 .card-img-top {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: 350px; /* Altura fija consistente para todas las imágenes */
-    object-fit: cover; /* Llena el contenedor recortando partes si es necesario */
-    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 300px;
 }
-
 
 .card-body {
     padding: 15px;
     font-size: 0.9rem;
-    padding-bottom: 40px; /* Aumenta la separación entre el texto y el botón */
+    padding-bottom: 40px; 
 }
 
 .btn {
@@ -53,9 +64,9 @@
     left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.3s ease, visibility 0.3s ease, color 0.3s ease;
-    background-color: white;
-    border: 2px solid #CDA1EE;
-    color: #CDA1EE;
+    background-color: #9FC5B1;
+    border: 2px solid #9FC5B1;
+    color: #ffffff;
     padding: 5px 15px;
     text-decoration: none;
 }
@@ -66,9 +77,9 @@
 }
 
 .btn:hover {
-    color: #FF69B4;
+    color: #fdfdfd;
     text-decoration: none;
-    background-color: white;
+    background-color: #9FC5B1;
 }
 
 .btn:focus,
