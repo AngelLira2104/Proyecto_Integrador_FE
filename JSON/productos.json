@@ -71,6 +71,14 @@
             "Imagen": "https://th.bing.com/th/id/OIP.nISjaMuPEpql-3zobZcAFQHaE8?rs=1&pid=ImgDetMain",
             "Existencias" : "10",
             "PrecioUnitario" : "10.50"
+        },
+        {
+            "Nombre": "Rosas Azules",
+            "ID" : "0010",
+            "Descripcion": "Las rosas azules simbolizan amor, esperanza, confianza, unión, armonía, optimismo y afecto. También pueden representar el misterio, el secreto, el orgullo y el amor no correspondido.",
+            "Imagen": "https://m.media-amazon.com/images/I/71Xmnfv4aXL.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "10.50"
         }
     ]
 }
