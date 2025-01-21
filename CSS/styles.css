@@ -114,3 +114,17 @@ img {
     position: static;
     left: 0px;
  }
+
+ /*Imagenes de index*/
+.img-box{
+    height: 100%;
+    box-sizing: border-box;
+}
+.img-destacados{
+    height: 500px;
+}
+
+/*Las tarjetas*/
+.card{
+    height: 850px;
+}

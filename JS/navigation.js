@@ -27,13 +27,7 @@ window.addEventListener("load", function(event){
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto p-2">
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" aria-current="page" href="${urlIndex.pathname}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link main-nav-link" href="${urlAbout.pathname}">Acerca de Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link main-nav-link" href="${urlContact.pathname}">Contáctanos</a>
-                    </li>
+                    </li>                  
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" href="${urlProductos.pathname}">Productos</a>
                     </li>
@@ -41,11 +35,17 @@ window.addEventListener("load", function(event){
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" href="${urlEdicionProductos.pathname}">Edición de Productos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-link" href="${urlContact.pathname}">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-link" href="${urlAbout.pathname}">Acerca de Nosotros</a>
+                    </li>
                         <li class="nav-item">
                             <a href="${urlInicioSesion.pathname}" class="nav-link main-nav-link">Iniciar sesión</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link main-nav-link carro" id="carritos" href="${urlInicioSesion.pathname}">Carrito<img src="../IMG/Carrito.png" alt="" id="carrito"></a>
+                            <a class="nav-link main-nav-link carro" id="carritos" href="${urlInicioSesion.pathname}"><img src="../IMG/Carrito.png" alt="" id="carrito"></a>
                         </li>
                 </span>
             </div>
