@@ -13,7 +13,7 @@ const editStock = document.getElementById("editStock");
 const editUnitPrice = document.getElementById("editUnitPrice");
 const alertDuplicadoIDEdit = document.getElementById("alertIdDuplicado2");
 const alertDuplicadoIDtextEdit = document.getElementById("alertIdDuplicadotext2");
-const alertEmptySearch = document.getElementById("alertEmpySearch");
+const alertEmptySearch = document.getElementById("alertEmptySearch");
 const alertEmptySearchText = document.getElementById("alertEmptySearchText");
 const btnEditar = document.getElementById("btnEditar");
 
