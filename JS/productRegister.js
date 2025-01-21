@@ -6,7 +6,12 @@ const productImage = document.getElementById("inputImage");
 const productStock = document.getElementById("inputStock");
 const productUnitPrice = document.getElementById("inputUnitPrice");
 const duplicateIdAlert = document.getElementById("alertIdDuplicado");
-const duplicateIdAlertText = document.getElementById("alertIdDuplicado");
+const idAlert = document.getElementById("alertId");
+//const duplicateIdAlertText = document.getElementById("alertIdDuplicado");
+const nameAlert = document.getElementById("alertNombre");
+const descriptionAlert = document.getElementById("alertDescripcion");
+const stockAlert = document.getElementById("alertExistencia");
+const priceAlert = document.getElementById("alertPrecio");
 
 let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
@@ -56,63 +61,64 @@ btnRegistrar.addEventListener("click", function (event) {
   const idRegex = /^[a-zA-Z0-9]{1,12}$/;
   const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{4,}$/;
   const descriptionRegex = /^.{10,}$/;
-  const priceRegex = /^[0-9]+(\.[0-9]{1,2})?$/;
   const stockRegex = /^[0-9]+$/;
+  const priceRegex = /^[0-9]+(\.[0-9]{1,2})?$/;
+  //const imageRegex = /^(https?:\/\/)?([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$/;
+  
 
   if (!idRegex.test(productID.value)) {
+    idAlert.classList.remove("d-none");
     productID.style.border = "solid red medium";
     isValid = false;
+  } else {
+    idAlert.classList.add("d-none");
+    productID.style.border = "solid green medium";
   }
   if (!nameRegex.test(productName.value)) {
+    nameAlert.classList.remove("d-none");
     productName.style.border = "solid red medium";
     isValid = false;
+  } else {
+    nameAlert.classList.add("d-none");
+    productName.style.border = "solid green medium";
   }
   if (!descriptionRegex.test(productDescription.value)) {
+    descriptionAlert.classList.remove("d-none");
     productDescription.style.border = "solid red medium";
     isValid = false;
+  } else {
+    descriptionAlert.classList.add("d-none");
+    productDescription.style.border = "solid green medium";
   }
   if (!stockRegex.test(productStock.value) || Number(productStock.value) <= 0) {
+    stockAlert.classList.remove("d-none");
     productStock.style.border = "solid red medium";
     isValid = false;
+  } else {
+    stockAlert.classList.add("d-none");
+    productStock.style.border = "solid green medium";
   }
-
   if (
     !priceRegex.test(productUnitPrice.value) ||
     Number(productUnitPrice.value) <= 0
   ) {
+    priceAlert.classList.remove("d-none");
     productUnitPrice.style.border = "solid red medium";
     isValid = false;
+  } else {
+    priceAlert.classList.add("d-none");
+    productUnitPrice.style.border = "solid green medium";
   }
   if (productImage.value.trim() === "") {
     productImage.style.border = "solid red medium";
     isValid = false;
   }
-
   if (productos.find((producto) => producto.ID === productID.value)) {
     duplicateIdAlert.classList.remove("d-none");
     productID.style.border = "solid red medium";
-    setTimeout(() => duplicateIdAlert.classList.add("d-none"), 5000);
-    return; // Salir sin registrar
+    //setTimeout(() => duplicateIdAlert.classList.add("d-none"), 5000);
+    return; //Salir sin registrar
 }
-
-  // if (
-  //   productos.find((producto) => producto.ID === productID.value) !== undefined
-  // ) {
-  //   duplicateIdAlert.classList.remove("d-none");
-  //   duplicateIdAlert.innerHTML = `
-  //   <strong>Error:</strong> El ID "${productID.value}" ya está registrado.
-  //   <a href="#" class="alert-link">Corrige el ID</a>.
-  //   `;
-  // productID.style.border = "solid red medium";
-  //   isValid = false;
-
-  // //Ocultar la alerta automáticamente después de 5 segundos
-  //   setTimeout(() => {
-  //   duplicateIdAlert.classList.add("d-none");
-  //   }, 5000);
-  // } else {
-  //   duplicateIdAlert.classList.add("d-none");
-  // }
 
   /*
     if (productName.value.length < 4){
@@ -170,7 +176,13 @@ btnRegistrar.addEventListener("click", function (event) {
     productImage.value = "";
     productID.value = "";
     duplicateIdAlert.style.display = "none";
-    duplicateIdAlertText.innerHTML = "";
+    //duplicateIdAlertText.innerHTML = "";
+    duplicateIdAlert.classList.add("d-none");
+    idAlert.classList.add("d-none");    
+    nameAlert.classList.add("d-none");
+    descriptionAlert.classList.add("d-none");
+    stockAlert.classList.add("d-none");
+    priceAlert.classList.add("d-none");
     productName.focus();
   }
 });
