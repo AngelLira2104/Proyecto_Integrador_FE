@@ -34,7 +34,7 @@
             <div class="inputR">
                 <label for="userApellido1" class="label">Primer apellido*</label>
                 <label for="userApellido2" class="label">Segundo apellido</label><br>
-                <input type="text" id="userApellido1" class="Apellido1" required placeholder="Primer apellido">
+                <input type="text" id="userApellido1" class="Apellido1 apellidoM" required placeholder="Primer apellido">
                 <input type="text" id="userApellido2" class="Apellido2" required placeholder="Segundo apellido">
                 <i class="bx bx-user icon"></i>
                 <div class="mensaje-error error-appellido">El apellido es inválido*</div>
@@ -68,7 +68,8 @@
                 <i class="bx bx-lock-alt icon"></i>
                 <div class="mensaje-error error-contraseña2">No es la misma contraseña.*</div>
             </div>
-        <button id="registerButton" class="botonR">Registrase</button>
+        <button  id="registerButton" class="botonR">Registrase</button>
+        
         </div>
       </div>
       <!-- Fin del Login -->
@@ -100,6 +101,7 @@
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript"
 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 

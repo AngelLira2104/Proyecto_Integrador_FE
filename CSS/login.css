@@ -187,7 +187,7 @@ register a{
     flex-direction: column;
     color: black;
 }
-.ApellidoP{
+.Apellido1{
     width: 47%;
     height: 50px;
     font-size: 16px;
@@ -201,7 +201,7 @@ register a{
 #userApellido2{
     text-align: left;
 }
-.ApellidoM{
+.Apellido2{
    
     position:relative;
     width: 47%;

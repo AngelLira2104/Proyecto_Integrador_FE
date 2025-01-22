@@ -167,6 +167,7 @@ btnRegistrar.addEventListener("click", function (event) {
       Existencias: productStock.value,
       PrecioUnitario: productUnitPrice.value,
     };
+    
     productos.push(product);
     localStorage.setItem("productos", JSON.stringify(productos));
     productName.value = "";
