@@ -1,3 +1,4 @@
+//Se crea la clase validarContacto que va a contener los campos del formulario
 class validarContacto {
     nombre = "";
     primerApellido = "";
@@ -11,21 +12,19 @@ class validarContacto {
         this.correo = correo;
         this.telefono = telefono;
     }
-
-    // Validación del nombre
+    //Se crean las validaciones mediante RegEx para los campos    
     setName(nombre) {
-        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,15}$/u;  // Solo se aceptan letras minúsculas y mayúsculas, y también se aceptan nombres entre 2 y 15 caracteres        
+        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s-]{2,15}$/u;
         if (regex.test(nombre)){
-            this.nombre = nombre; // El nombre ingresado se almacena en 'nombre'
-            return true; // Indica que el nombre es válido
+            this.nombre = nombre;
+            return true;
         } else {
-            this.nombre = "";  // Se limpia el valor del nombre para que no se almacene en 'nombre'
-            return false; // Indica que el nombre no es válido
+            this.nombre = ""; 
+            return false;
         }
     }
-
     setFirstSurname(primerApellido) {
-        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,15}$/u; 
+        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s-]{2,15}$/u;
         if (regex.test(primerApellido)){
             this.primerApellido = primerApellido; 
             return true; 
@@ -34,9 +33,8 @@ class validarContacto {
             return false; // 
         }
     }
-
     setSecondSurname(segundoApellido) {
-        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,15}$/u; 
+        const regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s-]{2,15}$/u;
         if (regex.test(segundoApellido)){
             this.segundoApellido = segundoApellido; 
             return true; 
@@ -45,7 +43,6 @@ class validarContacto {
             return false; // 
         }
     }
-
     setCorreo(correo) {
         const regex = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/; 
         if (regex.test(correo)){
@@ -56,10 +53,9 @@ class validarContacto {
             return false; // 
         }
     }
-
     setTelefono(telefono) {
         const regex = /^[0-9]{1,10}$/; 
-        if (regex.test(telefono)){
+        if (regex.test(telefono) && telefono !== "0000000000"){
             this.telefono = telefono; 
             return true; 
         } else {
@@ -68,119 +64,149 @@ class validarContacto {
         }
     }
 }
-
-document.addEventListener("DOMContentLoaded", () => { // Esperamos a que el DOM esté cargado
+//Se crea una 'oreja' mediante la cual se espera a que el DOM esté cargado
+document.addEventListener("DOMContentLoaded", () => {
     
-    //Leer las entradas
+    //Se guardan los ID de los input en constantes
     const inputName = document.getElementById("inputName");
     const inputFirstSurName = document.getElementById("inputFirstSurName");
     const inputSecondSurName = document.getElementById("inputSecondSurName");
     const inputEmail = document.getElementById("inputEmail");
     const inputPhone = document.getElementById("inputPhone");
 
-    //Errores para cada elemento de la clase
+    //Se crean los párrafos que mostrarán los mensajes de error en tiempo real para cada elemento de la clase
     const nombreError = document.createElement("p");
     const primerApellidoError = document.createElement("p");
     const segundoApellidoError = document.createElement("p");
     const emailError = document.createElement("p");
     const telefonoError = document.createElement("p");
 
-    //Añadir los mensajes de error al DOM
+    //Se añaden los mensajes de error al DOM
     inputName.parentElement.appendChild(nombreError); 
     inputFirstSurName.parentElement.appendChild(primerApellidoError); 
     inputSecondSurName.parentElement.appendChild(segundoApellidoError);
     inputEmail.parentElement.appendChild(emailError);
     inputPhone.parentElement.appendChild(telefonoError);
 
-    // Escuchar el evento "input" para validar el nombre en tiempo real
+    //Se crea otra 'oreja' para el evento "input" que valida las entradas en tiempo real
     inputName.addEventListener("input", () => {
-        const contacto = new validarContacto(); // Crear una instancia de la clase ValidarContacto
-        const esValido = contacto.setName(inputName.value.trim()); // Validar el valor del input
+        const contacto = new validarContacto(); //Se crea una instancia de la clase validarContacto
+        const esValido = contacto.setName(inputName.value.trim()); //Se valida el valor de las entrada para nombre
 
-        // Mostrar el resultado de la validación
+        //Se muestra el resultado de la validación en tiempo real
         if (esValido) {
-            nombreError.textContent = "El nombre de usuario es válido"; // Limpiar mensaje de error si el nombre es válido
-            inputName.style.borderColor = "green"; // Cambiar el borde a verde para un nombre válido
+            nombreError.textContent = "El nombre de usuario es válido"; 
+            inputName.style.borderColor = "green"; 
             inputName.style.border = "solid green medium";  
-            nombreError.style.color = "green"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+            nombreError.style.color = "green"; 
         } else {
-            nombreError.textContent = "El nombre debe contener solo letras (2-15 caracteres)."; // Mensaje de error
-            inputName.style.borderColor = "red"; // Cambiar el borde a rojo para un nombre no válido
+            nombreError.textContent = "El nombre debe contener mínimo dos letras"; 
+            inputName.style.borderColor = "red"; 
             inputName.style.border = "solid red medium";
-            nombreError.style.color = "red"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+            nombreError.style.color = "red"; 
         }
     });
 
     inputFirstSurName.addEventListener("input", () => {
-        const contacto = new validarContacto(); // Crear una instancia de la clase ValidarContacto
-        const esValido = contacto.setName(inputFirstSurName.value.trim()); // Validar el valor del input
+        const contacto = new validarContacto(); 
+        const esValido = contacto.setFirstSurname(inputFirstSurName.value.trim()); 
 
-        // Mostrar el resultado de la validación
+        
         if (esValido) {
-            primerApellidoError.textContent = "El primer apellido de usuario es válido"; // Limpiar mensaje de error si el nombre es válido
-            inputFirstSurName.style.borderColor = "green"; // Cambiar el borde a verde para un nombre válido
+            primerApellidoError.textContent = "El primer apellido de usuario es válido"; 
+            inputFirstSurName.style.borderColor = "green"; 
             inputFirstSurName.style.border = "solid green medium";  
-            primerApellidoError.style.color = "green"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+            primerApellidoError.style.color = "green";
         } else {
-            primerApellidoError.textContent = "El primer apellido debe contener solo letras (2-15 caracteres)."; // Mensaje de error
-            inputFirstSurName.style.borderColor = "red"; // Cambiar el borde a rojo para un nombre no válido
+            primerApellidoError.textContent = "El primer apellido debe contener mínimo dos letras"; 
+            inputFirstSurName.style.borderColor = "red"; 
             inputFirstSurName.style.border = "solid red medium";
-            primerApellidoError.style.color = "red"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+            primerApellidoError.style.color = "red"; 
         }
     });
 
     inputSecondSurName.addEventListener("input", () => {
-        const contacto = new validarContacto(); // Crear una instancia de la clase ValidarContacto
-        const esValido = contacto.setName(inputSecondSurName.value.trim()); // Validar el valor del input
+        const contacto = new validarContacto(); 
+        const esValido = contacto.setSecondSurname(inputSecondSurName.value.trim()); 
     
-            // Mostrar el resultado de la validación
+            
             if (esValido) {
-                segundoApellidoError.textContent = "El segundo apellido de usuario es válido"; // Limpiar mensaje de error si el nombre es válido
-                inputSecondSurName.style.borderColor = "green"; // Cambiar el borde a verde para un nombre válido
+                segundoApellidoError.textContent = "El segundo apellido de usuario es válido"; 
+                inputSecondSurName.style.borderColor = "green"; 
                 inputSecondSurName.style.border = "solid green medium";  
-                segundoApellidoError.style.color = "green"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+                segundoApellidoError.style.color = "green"; 
             } else {
-                segundoApellidoError.textContent = "El primer apellido debe contener solo letras (2-15 caracteres)."; // Mensaje de error
-                inputSecondSurName.style.borderColor = "red"; // Cambiar el borde a rojo para un nombre no válido
+                segundoApellidoError.textContent = "El primer apellido debe contener mínimo dos letras";
+                inputSecondSurName.style.borderColor = "red"; 
                 inputSecondSurName.style.border = "solid red medium";
-                segundoApellidoError.style.color = "red"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+                segundoApellidoError.style.color = "red"; 
             }
         });
 
     inputEmail.addEventListener("input", () => {
-        const contacto = new validarContacto(); // Crear una instancia de la clase ValidarContacto
-        const esValido = contacto.setCorreo(inputEmail.value.trim()); // Validar el valor del input
+        const contacto = new validarContacto(); 
+        const esValido = contacto.setCorreo(inputEmail.value.trim()); 
 
-        // Mostrar el resultado de la validación
+        
         if (esValido) {
-            emailError.textContent = "El correo es válido"; // Limpiar mensaje de error si el nombre es válido
-            inputEmail.style.borderColor = "green"; // Cambiar el borde a verde para un nombre válido
+            emailError.textContent = "El correo es válido"; 
+            inputEmail.style.borderColor = "green"; 
             inputEmail.style.border = "solid green medium";  
-            emailError.style.color = "green"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+            emailError.style.color = "green"; 
         } else {
-            emailError.textContent = "El correo debe incluir '@' y un dominio"; // Mensaje de error
-            inputEmail.style.borderColor = "red"; // Cambiar el borde a rojo para un nombre no válido
+            emailError.textContent = "El correo debe incluir '@' y un dominio"; 
+            inputEmail.style.borderColor = "red"; 
             inputEmail.style.border = "solid red medium";
-            emailError.style.color = "red"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+            emailError.style.color = "red"; 
         }    
 
     });
 
     inputPhone.addEventListener("input", () => {
-        const contacto = new validarContacto(); // Crear una instancia de la clase ValidarContacto
-        const esValido = contacto.setTelefono(inputPhone.value.trim()); // Validar el valor del input
+        const contacto = new validarContacto(); 
+        const esValido = contacto.setTelefono(inputPhone.value.trim()); 
 
-        // Mostrar el resultado de la validación
+        
         if (esValido) {
-            telefonoError.textContent = "El teléfono es válido"; // Limpiar mensaje de error si el nombre es válido
-            inputPhone.style.borderColor = "green"; // Cambiar el borde a verde para un nombre válido
+            telefonoError.textContent = "El teléfono es válido"; 
+            inputPhone.style.borderColor = "green"; 
             inputPhone.style.border = "solid green medium";  
-            telefonoError.style.color = "green"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+            telefonoError.style.color = "green"; 
         } else {
-            telefonoError.textContent = "El teléfono no debe incluir espacios ni guiones (10 dígitos)"; // Mensaje de error
-            inputPhone.style.borderColor = "red"; // Cambiar el borde a rojo para un nombre no válido
+            telefonoError.textContent = "El teléfono no debe incluir espacios ni guiones, solo números (10 dígitos)"; 
+            inputPhone.style.borderColor = "red"; 
             inputPhone.style.border = "solid red medium";
-            telefonoError.style.color = "red"; // El mensaje de error se muestra en rojo para que sea visible al usuario
+            telefonoError.style.color = "red"; 
         }  
     });
+
+
+//--------Implementación de alerta cuando el formulario fue enviado--------//
+
+    const formulario = document.getElementById("form");
+    const alertaExito = document.getElementById("alerta-exito");    
+
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();        
+        alertaExito.classList.remove("d-none");
+        
+        const inputs = formulario.querySelectorAll("input, textarea");
+        //Se crea este forEach() para poder eliminar el contenido de texto de cada <input>, <textarea> 
+        inputs.forEach((input) => {
+            input.style.border = "";
+            input.style.borderColor = "";
+        });
+        //Se crea este forEach() para poder eliminar el contenido de texto de cada <p>
+        const mensajesError = formulario.querySelectorAll("p");
+        mensajesError.forEach((mensaje) => {
+            mensaje.textContent = "";
+        });
+        //Con este setTimeout() establecemos que la alerta será visible para el usuario durante 5 segundos
+        setTimeout(() => {
+            alertaExito.classList.add("d-none");
+        }, 5000);
+        //Limpiamos el formulario        
+        formulario.reset();
+    });
 });
+
