@@ -26,30 +26,34 @@
             <div class="login-header">
                 <span>Regístrate</span>
             </div>
-            <div class="container-fluid "><p style="font-size: smaller; color: black;">Los campos con los asteriscos son obligatorios</p style="font-size: smaller;"></div>
             <div class="input-box">
-                <label for="user" class="label">Nombre*</label>
-                <input type="text" id="userNombre" class="input-fiel" required placeholder="Nombre(s)">
+                <label for="userName" class="label">Nombre*</label>
+                <input type="text" id="userName" class="input-fiel" required placeholder="Nombre(s)">
                 <i class="bx bx-user icon"></i>
-                <div class="mensaje-error error-nombre alert-danger">El nombre es inválido.*</div>
             </div>
             <div class="inputR">
                 <label for="userApellido1" class="label">Primer apellido*</label>
                 <label for="userApellido2" class="label">Segundo apellido</label><br>
-                <input type="text" id="userApellido1" class="ApellidoP" required placeholder="Primer apellido">
-                <input type="text" id="userApellido2" class="ApellidoM" required placeholder="Segundo apellido">
+                <input type="text" id="userApellido1" class="Apellido1" required placeholder="Primer apellido">
+                <input type="text" id="userApellido2" class="Apellido2" required placeholder="Segundo apellido">
                 <i class="bx bx-user icon"></i>
                 <div class="mensaje-error error-appellido">El apellido es inválido*</div>
             </div>
             <div class="input-box">
-                <label for="user" class="label">Correo electrónico*</label>
-                <input type="text" id="user" class="input-fiel" required placeholder="Correo electrónico">
+                <label for="userCorreo" class="label">Correo electrónico*</label>
+                <input type="text" id="userCorreo" class="input-fiel" required placeholder="Correo electrónico">
                 <i class="bx bx-user icon"></i>
                 <div class="mensaje-error error-email">Introduce un correo válido.*</div>
             </div>
             <div class="input-box">
-                <label for="pass" class="label">Contraseña*</label>
-                <input type="password" id="pass" class="input-fiel" required placeholder="Debe contener de 8-20 caracteres...">
+                <label for="userTelefono" class="label">Telefono*</label>
+                <input type="text" id="userTelefono" class="input-fiel" required placeholder="Correo electrónico">
+                <i class="bx bx-user icon"></i>
+                <div class="mensaje-error error-email">Introduce un correo válido.*</div>
+            </div>
+            <div class="input-box">
+                <label for="userPass" class="label">Contraseña*</label>
+                <input type="password" id="userPass" class="input-fiel" required placeholder="Debe contener de 8-20 caracteres...">
                 <i class="bx bx-lock-alt icon"></i>
                 <div class="mensaje-error error-contraseña">La contraseña no tiene los requerimientos necesarios.*</div>
 
@@ -59,12 +63,12 @@
                 </ul></div>
             </div>
             <div class="input-box">
-                <label for="pass" class="label">Confirma contraseña*</label>
-                <input type="password" id="pass" class="input-fiel" required placeholder="Repite la contraseña">
+                <label for="confirmpass" class="label">Confirma contraseña*</label>
+                <input type="password" id="confirmpass" class="input-fiel" required placeholder="Repite la contraseña">
                 <i class="bx bx-lock-alt icon"></i>
                 <div class="mensaje-error error-contraseña2">No es la misma contraseña.*</div>
             </div>
-        <button class="botonR">Registrase</button>
+        <button id="registerButton" class="botonR">Registrase</button>
         </div>
       </div>
       <!-- Fin del Login -->
@@ -79,6 +83,8 @@
 <script src="../JS/contacto_jmg.js"></script>
 <!-- <script src="../JS/validacion.js"></script> -->
 <script src="../JS/script.js"></script>
+<!-- User Registrer -->
+<script src="../JS/userRegister.js"></script>
 <!-- Animaciones personalizadas -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
