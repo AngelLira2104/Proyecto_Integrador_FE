@@ -1,22 +1,27 @@
-*{
-    margin:0;
+/* Estilos generales */
+{
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:"Lora", serif ;
+    font-family: "Lora", serif;
 }
+
+/* Contenedor de tarjetas */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px 40px !important;
+    grid-template-columns: repeat(4, 1fr); 
+    column-gap: 60px; 
+    row-gap: 40px;    
     padding: 40px;
+    width: 100%; 
+    margin: 0 auto; 
     margin-bottom: 100px;
-    margin-top: 300px !important; 
+    margin-top: 300px !important;
 }
 
 #list-items {
     margin-top: 50px !important;
 }
-
 
 .card {
     border-radius: 15px;
@@ -24,7 +29,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     max-width: 600px;
-    margin: auto;
+    margin: 0; 
     background-color: #f4f4f4;
     border: 1px solid #ccc;
     text-align: center;
@@ -42,22 +47,22 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 300px;
+    height: 300px; 
+    object-fit: cover; 
+    object-position: center; 
 }
 
 .card-body {
     padding: 15px;
     font-size: 0.9rem;
-    padding-bottom: 40px; 
+    padding-bottom: 40px;
 }
 
 .btn {
     border-radius: 5px;
     font-size: 0.8rem;
     font-family: 'Flora', sans-serif;
-    opacity: 0;
+    opacity: 0; 
     visibility: hidden;
     position: absolute;
     bottom: 5px;
@@ -72,7 +77,7 @@
 }
 
 .card:hover .btn {
-    opacity: 1;
+    opacity: 1; 
     visibility: visible;
 }
 
@@ -82,27 +87,57 @@
     background-color: #9FC5B1;
 }
 
+/* Eliminar borde azul y sombreado en todos los navegadores */
 .btn:focus,
-.btn:active {
+.btn:active,
+button:focus,
+button:active {
     color: #CDA1EE;
-    outline: none !important;
-    box-shadow: none !important;
+    outline: none !important; /* Elimina el borde azul */
+    box-shadow: none !important; /* Elimina el sombreado azul */
     background-color: white;
     border: 2px solid #CDA1EE;
 }
 
-.btn:focus-visible {
+/* Para asegurar que no haya bordes ni sombras al hacer clic o enfocarse */
+.btn:focus-visible,
+button:focus-visible {
     outline: none !important;
+    box-shadow: none !important;
 }
 
-button:focus {
-    outline: none !important;
+
+button {
+    outline: none !important; 
+    box-shadow: none !important; 
 }
 
+/* Remueve el borde en los enlaces también */
+a:focus,
+a:active {
+    outline: none !important; 
+    box-shadow: none !important;
+}
+
+/* Vista móvil */
 @media (max-width: 768px) {
+    .btn {
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: static; 
+        margin-top: 10px; 
+        transform: none;
+    }
+
+    .card {
+        min-height: auto;
+        height: auto;
+    }
+
     .card-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px 15px;
+        column-gap: 30px; 
+        row-gap: 15px; 
     }
 }
 

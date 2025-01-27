@@ -29,20 +29,21 @@
 .card-img-top {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: 350px; /* Altura fija consistente para todas las imágenes */
-    object-fit: cover; /* Llena el contenedor recortando partes si es necesario */
+    width: 100%; 
+    height: 400px; 
+    object-fit: cover; 
     display: block;
+    object-position: center; 
 }
-
 
 .card-body {
     padding: 15px;
     font-size: 0.9rem;
-    padding-bottom: 40px; /* Aumenta la separación entre el texto y el botón */
+    padding-bottom: 40px; 
 }
 
-.btn {
+
+.card .btn {
     border-radius: 5px;
     font-size: 0.8rem;
     font-family: 'Flora', sans-serif;
@@ -53,9 +54,9 @@
     left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.3s ease, visibility 0.3s ease, color 0.3s ease;
-    background-color: white;
-    border: 2px solid #CDA1EE;
-    color: #CDA1EE;
+    background-color: #EBB2DC;
+    border: 2px solid #AB5A8C;
+    color: #f8f8f8;
     padding: 5px 15px;
     text-decoration: none;
 }
@@ -65,14 +66,14 @@
     visibility: visible;
 }
 
-.btn:hover {
+.card .btn:hover {
     color: #FF69B4;
     text-decoration: none;
     background-color: white;
 }
 
-.btn:focus,
-.btn:active {
+.card .btn:focus,
+.card .btn:active {
     color: #CDA1EE;
     outline: none !important;
     box-shadow: none !important;
@@ -80,7 +81,7 @@
     border: 2px solid #CDA1EE;
 }
 
-.btn:focus-visible {
+.card .btn:focus-visible {
     outline: none !important;
 }
 
@@ -88,12 +89,17 @@ button:focus {
     outline: none !important;
 }
 
+
+
+
 @media (max-width: 768px) {
-    .card-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px 15px;
+    .card .btn {
+        display: block; 
+        opacity: 1;
+        visibility: visible;
     }
 }
+
 
 @media (max-width: 480px) {
     .card-container {
@@ -114,4 +120,13 @@ footer {
 
 .custom-row {
     row-gap: 45px !important;
+}
+
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .card .btn {
+        display: block; 
+        opacity: 1;
+        visibility: visible;
+    }
 }
