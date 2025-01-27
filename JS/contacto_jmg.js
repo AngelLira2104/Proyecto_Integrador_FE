@@ -6,9 +6,11 @@ class validarContacto {
   segundoApellido = "";
   correo = "";
   telefono = "";
+  asunto = "";
+  mensaje = "";
   Contraseña = "";
   Contraseña2 ="";
-  constructor(nombre, primerApellido, segundoApellido, correo, telefono, Contraseña,  Contraseña2) {
+  constructor(nombre, primerApellido, segundoApellido, correo, telefono, asunto, mensaje, Contraseña,  Contraseña2) {
     this.nombre = nombre;
     this.primerApellido = primerApellido;
     this.segundoApellido = segundoApellido;
@@ -16,6 +18,8 @@ class validarContacto {
     this.telefono = telefono;
     this.Contraseña = Contraseña;
     this.Contraseña2 = Contraseña2;
+    this.asunto = asunto;
+    this.mensaje = mensaje;
   }
 
   //----------Se definen los métodos para validar las entradas en los campos----------//
@@ -86,8 +90,25 @@ class validarContacto {
       }else{
         this.Contraseña2 = "";
       return false; //
-      }
-   
+      }   
+  }
+  setAsunto(asunto) {
+    if (asunto.trim().length > 0) {
+      this.asunto = asunto;
+      return true;
+    } else {
+      this.asunto = "";
+      return false;
+    }
+  }
+  setMensaje(mensaje) {
+    if (mensaje.trim().length > 0) {
+      this.mensaje = mensaje;
+      return true;
+    } else {
+      this.mensaje = "";
+      return false;
+    }
   }
 } //class validarContacto
 
@@ -102,6 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
     phone: document.getElementById("inputPhone"),
     password: document.getElementById("userPass"),
     password2: document.getElementById("userPassconfirm"),
+    about: document.getElementById("inputAbout"),
+    message: document.getElementById("exampleFormControlTextarea1"),
   };
   const submitButton = document.getElementById("submitForm"); //Se trae el botón de 'Enviar'
   let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -150,6 +173,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const padreContraseña2 = inputs[actualContraseña2].parentElement;
   padreContraseña2.appendChild(crearParrafoContraseña2);
 
+  const actualAsunto = "about";
+  const crearParrafoAsunto = document.createElement("p");
+  errors[actualAsunto] = crearParrafoAsunto;
+  const padreAsunto = inputs[actualAsunto].parentElement;
+  padreAsunto.appendChild(crearParrafoAsunto);
+
+  const actualMensaje = "message";
+  const crearParrafoMensaje = document.createElement("p");
+  errors[actualMensaje] = crearParrafoMensaje;
+  const padreMensaje = inputs[actualMensaje].parentElement;
+  padreMensaje.appendChild(crearParrafoMensaje);
+
   //----------Se configuran las validaciones y los mensajes de error----------//
 
   const contacto = new validarContacto(); //Se crea una instancia de la clase validarContacto
@@ -162,6 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
     phone: (value) => contacto.setTelefono(value.trim()),
     password: (value) => contacto.setContraseña(value.trim()),
     password2: (value) => contacto.setContraseña(value.trim()),
+    about: (value) => contacto.setAsunto(value.trim()),
+    message: (value) => contacto.setMensaje(value.trim()),
   };
 
   const errorMessages = {
@@ -194,7 +231,15 @@ document.addEventListener("DOMContentLoaded", () => {
       error: "La contraseña no coincide",
       success: "La contraseña coinciden",
     },
-  };
+    about: {
+      error: "Por favor, coloca el asunto del mensaje",
+      success: "Asunto del mensaje válido",
+    },
+    message: {
+      error: "¡Espera! No olvides colocar tu mensaje",
+      success: "Cuerpo del mensaje válido",
+  }
+};
 
   function fieldValidation(inputKey) {
     //Se crea la función fieldValidation que valida a cada uno de los campos del formulario
@@ -251,10 +296,8 @@ document.addEventListener("DOMContentLoaded", () => {
       phone: inputs.phone.value.trim(),
       password: inputs.password.value.trim(),
       password2: inputs.password2.value.trim(),
-      about: document.getElementById("inputAbout").value.trim(),
-      message: document
-        .getElementById("exampleFormControlTextarea1")
-        .value.trim(),
+      about: inputs.about.value.trim(),
+      message: inputs.message.value.trim(),
     };
 
     emailjs
@@ -266,19 +309,19 @@ document.addEventListener("DOMContentLoaded", () => {
           response.text
         );
 
-        const alertaExito = document.getElementById("alerta-exito");//Se trae la alerta con ID: alerta-exitoso desde HTML
-        alertaExito.classList.remove("d-none");//Se muestra la alerta de envío exitoso
+        const alertaExito = document.getElementById("alerta-exito"); //Se trae la alerta con ID: alerta-exitoso desde HTML
+        alertaExito.classList.remove("d-none"); //Se muestra la alerta de envío exitoso
 
         setTimeout(() => {
           alertaExito.classList.add("d-none");
-        }, 5000);//Se elimina la alerta de envío exitoso automáticamente después de 5 segundos
+        }, 5000); //Se elimina la alerta de envío exitoso automáticamente después de 5 segundos
 
         document.getElementById("form").reset(); //Se limpia el formulario después de enviar
         Object.keys(errors).forEach((key) => {
           errors[key].textContent = ""; //Se limpian los mensajes de error de todos los campos
           inputs[key].style.border = ""; //Se reestablecen los bordes de todos los campos
         });
-      });      
+      });
   });
 });
 
