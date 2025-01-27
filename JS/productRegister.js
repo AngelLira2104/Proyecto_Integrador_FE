@@ -7,11 +7,12 @@ const productStock = document.getElementById("inputStock");
 const productUnitPrice = document.getElementById("inputUnitPrice");
 const duplicateIdAlert = document.getElementById("alertIdDuplicado");
 const idAlert = document.getElementById("alertId");
-//const duplicateIdAlertText = document.getElementById("alertIdDuplicado");
 const nameAlert = document.getElementById("alertNombre");
 const descriptionAlert = document.getElementById("alertDescripcion");
 const stockAlert = document.getElementById("alertExistencia");
 const priceAlert = document.getElementById("alertPrecio");
+//Constante para el div que muestra el mensaje de exito para el registro
+const registerSuccess = document.getElementById("alertExitoRegistro");
 
 let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
@@ -56,6 +57,7 @@ btnRegistrar.addEventListener("click", function (event) {
   productDescription.style.border = "";
   productStock.style.border = "";
   productUnitPrice.style.border = "";
+  registerSuccess.style.display = "none";
 
   //RegExp for validations - JMG
   const idRegex = /^[a-zA-Z0-9]{1,12}$/;
@@ -116,48 +118,8 @@ btnRegistrar.addEventListener("click", function (event) {
   if (productos.find((producto) => producto.ID === productID.value)) {
     duplicateIdAlert.classList.remove("d-none");
     productID.style.border = "solid red medium";
-    //setTimeout(() => duplicateIdAlert.classList.add("d-none"), 5000);
     return; //Salir sin registrar
 }
-
-  /*
-    if (productName.value.length < 4){
-        productName.style.border = "solid red medium";
-        isValid = false;
-    }
-    if (productID.value === "") {
-        productID.style.border = "solid red medium";
-        isValid = false;
-    } else if (isNaN(productID.value)) {
-        productID.style.border = "solid red medium";
-        isValid = false;
-    }
-    if (isNaN(productID.value)){
-        productID.style.border = "solid red medium";
-        isValid = false;
-    }
-    if(productos.find(producto => producto.ID === productID.value) !== undefined){
-        duplicateIdAlert.style.display = "block";
-        duplicateIdAlertText.innerHTML = "<strong>No puede registrar productos con el mismo ID</strong>";
-        isValid = false;
-    }
-    if (productDescription.value.length < 4){
-        productDescription.style.border = "solid red medium";
-        isValid = false;
-    }
-    if (productImage.value.length < 4){
-        productImage.style.border = "solid red medium";
-        isValid = false;
-    }
-    if (Number(productStock.value) <= 0 || isNaN(productStock.value)){
-        productStock.style.border = "solid red medium";
-        isValid = false;
-    }
-    if(Number(productUnitPrice.value) <= 0 || isNaN(productUnitPrice.value)){
-        productUnitPrice.style.border = "solid red medium";
-        isValid = false;
-    }
-*/
   if (isValid) {
     let product = {
       Nombre: productName.value,
@@ -170,6 +132,8 @@ btnRegistrar.addEventListener("click", function (event) {
     
     productos.push(product);
     localStorage.setItem("productos", JSON.stringify(productos));
+    //Aqui se muestra el mensaje de exito
+    registerSuccess.style.display = "block";
     productName.value = "";
     productDescription.value = "";
     productStock.value = "";
@@ -177,7 +141,6 @@ btnRegistrar.addEventListener("click", function (event) {
     productImage.value = "";
     productID.value = "";
     duplicateIdAlert.style.display = "none";
-    //duplicateIdAlertText.innerHTML = "";
     duplicateIdAlert.classList.add("d-none");
     idAlert.classList.add("d-none");    
     nameAlert.classList.add("d-none");
