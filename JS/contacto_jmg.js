@@ -1,4 +1,3 @@
-
 //----------Se crea la clase validarContacto----------//
 
 class validarContacto {
@@ -282,10 +281,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });      
   });
 });
+
 let users = JSON.parse(localStorage.getItem("users")) || [];
 function GuardarDatos(){
-  
-    
     const userName = document.getElementById("inputName");
     const userApellidoP = document.getElementById("inputFirstSurName");
     const userApellidoM = document.getElementById("inputSecondSurName");
@@ -331,7 +329,7 @@ function GuardarDatos(){
             console.log("Usuarios actuales en localStorage:", users);
             
             setTimeout(function(){ 
-              window.location.href = "http://127.0.0.1:5500/HTML/inicioSesion.html"; 
+              window.location.href = urlInicioSesion.pathname; 
               }, 3 * 1000);
         } 
         
