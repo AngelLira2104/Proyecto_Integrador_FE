@@ -13,7 +13,7 @@ window.addEventListener("load", function(event){
         const pageFooter = document.getElementById("general-footer");
 
         let mainNavContent = `<div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="${urlIndex.pathname}">
                 <!-- The logo image doesn't seem to fit right maybe try to change the width and height properties or change the logo -->
                 <img src="${urlLogo.pathname}" alt="Logo" width="58" height="48" class="d-inline-block align-text-top">
             </a>
