@@ -5,12 +5,24 @@ class validarContacto {
   segundoApellido = "";
   correo = "";
   telefono = "";
-  constructor(nombre, primerApellido, segundoApellido, correo, telefono) {
+  asunto = "";
+  mensaje = "";
+  constructor(
+    nombre,
+    primerApellido,
+    segundoApellido,
+    correo,
+    telefono,
+    asunto,
+    mensaje
+  ) {
     this.nombre = nombre;
     this.primerApellido = primerApellido;
     this.segundoApellido = segundoApellido;
     this.correo = correo;
     this.telefono = telefono;
+    this.asunto = asunto;
+    this.mensaje = mensaje;
   }
 
   //----------Se definen los métodos para validar las entradas en los campos----------//
@@ -64,6 +76,24 @@ class validarContacto {
       return false; //
     }
   }
+  setAsunto(asunto) {
+    if (asunto.trim().length > 0) {
+      this.asunto = asunto;
+      return true;
+    } else {
+      this.asunto = "";
+      return false;
+    }
+  }
+  setMensaje(mensaje) {
+    if (mensaje.trim().length > 0) {
+      this.mensaje = mensaje;
+      return true;
+    } else {
+      this.mensaje = "";
+      return false;
+    }
+  }
 } //class validarContacto
 
 //----------Se agrega una 'oreja' que se activa cuando se carga todo el DOM----------//
@@ -75,6 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
     secondSurname: document.getElementById("inputSecondSurName"),
     email: document.getElementById("inputEmail"),
     phone: document.getElementById("inputPhone"),
+    about: document.getElementById("inputAbout"),
+    message: document.getElementById("exampleFormControlTextarea1"),
   };
   const submitButton = document.getElementById("submitForm"); //Se trae el botón de 'Enviar'
 
@@ -111,6 +143,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const padreTelefono = inputs[actualTelefono].parentElement;
   padreTelefono.appendChild(crearParrafoTelefono);
 
+  const actualAsunto = "about";
+  const crearParrafoAsunto = document.createElement("p");
+  errors[actualAsunto] = crearParrafoAsunto;
+  const padreAsunto = inputs[actualAsunto].parentElement;
+  padreAsunto.appendChild(crearParrafoAsunto);
+
+  const actualMensaje = "message";
+  const crearParrafoMensaje = document.createElement("p");
+  errors[actualMensaje] = crearParrafoMensaje;
+  const padreMensaje = inputs[actualMensaje].parentElement;
+  padreMensaje.appendChild(crearParrafoMensaje);
+
   //----------Se configuran las validaciones y los mensajes de error----------//
 
   const contacto = new validarContacto(); //Se crea una instancia de la clase validarContacto
@@ -121,6 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
     secondSurname: (value) => contacto.setSecondSurname(value.trim()),
     email: (value) => contacto.setCorreo(value.trim()),
     phone: (value) => contacto.setTelefono(value.trim()),
+    about: (value) => contacto.setAsunto(value.trim()),
+    message: (value) => contacto.setMensaje(value.trim()),
   };
 
   const errorMessages = {
@@ -144,6 +190,14 @@ document.addEventListener("DOMContentLoaded", () => {
     phone: {
       error: "El teléfono debe contener 10 dígitos, sin espacios ni guiones",
       success: "El teléfono introducido es válido",
+    },
+    about: {
+      error: "Por favor, coloca el asunto del mensaje",
+      success: "Asunto del mensaje válido",
+    },
+    message: {
+      error: "¡Espera! No olvides colocar tu mensaje",
+      success: "Cuerpo del mensaje válido",
     },
   };
 
@@ -187,8 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
 
+    //Se confirma que el formulario está validado antes de ser enviado
     if (!validateForm()) {
-      //Se confirma que el formulario está validado antes de ser enviado
+      // console.error("Error: Hay campos inválidos o vacíos en el formulario.");      
       return;
     }
 
@@ -198,10 +253,8 @@ document.addEventListener("DOMContentLoaded", () => {
       secondSurname: inputs.secondSurname.value.trim(),
       email: inputs.email.value.trim(),
       phone: inputs.phone.value.trim(),
-      about: document.getElementById("inputAbout").value.trim(),
-      message: document
-        .getElementById("exampleFormControlTextarea1")
-        .value.trim(),
+      about: inputs.about.value.trim(),
+      message: inputs.message.value.trim(),
     };
 
     emailjs
@@ -213,18 +266,18 @@ document.addEventListener("DOMContentLoaded", () => {
           response.text
         );
 
-        const alertaExito = document.getElementById("alerta-exito");//Se trae la alerta con ID: alerta-exitoso desde HTML
-        alertaExito.classList.remove("d-none");//Se muestra la alerta de envío exitoso
+        const alertaExito = document.getElementById("alerta-exito"); //Se trae la alerta con ID: alerta-exitoso desde HTML
+        alertaExito.classList.remove("d-none"); //Se muestra la alerta de envío exitoso
 
         setTimeout(() => {
           alertaExito.classList.add("d-none");
-        }, 5000);//Se elimina la alerta de envío exitoso automáticamente después de 5 segundos
+        }, 5000); //Se elimina la alerta de envío exitoso automáticamente después de 5 segundos
 
         document.getElementById("form").reset(); //Se limpia el formulario después de enviar
         Object.keys(errors).forEach((key) => {
           errors[key].textContent = ""; //Se limpian los mensajes de error de todos los campos
           inputs[key].style.border = ""; //Se reestablecen los bordes de todos los campos
         });
-      });      
+      });
   });
 });
