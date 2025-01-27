@@ -1,16 +1,22 @@
+
 //----------Se crea la clase validarContacto----------//
+
 class validarContacto {
   nombre = "";
   primerApellido = "";
   segundoApellido = "";
   correo = "";
   telefono = "";
-  constructor(nombre, primerApellido, segundoApellido, correo, telefono) {
+  Contraseña = "";
+  Contraseña2 ="";
+  constructor(nombre, primerApellido, segundoApellido, correo, telefono, Contraseña,  Contraseña2) {
     this.nombre = nombre;
     this.primerApellido = primerApellido;
     this.segundoApellido = segundoApellido;
     this.correo = correo;
     this.telefono = telefono;
+    this.Contraseña = Contraseña;
+    this.Contraseña2 = Contraseña2;
   }
 
   //----------Se definen los métodos para validar las entradas en los campos----------//
@@ -64,6 +70,26 @@ class validarContacto {
       return false; //
     }
   }
+  setContraseña(Contraseña) {
+    const regex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+    if (regex.test(Contraseña)) {
+      this.Contraseña = Contraseña;
+      return true;
+    } else {
+      this.Contraseña = "";
+      return false; //
+    }
+  }
+  setContraseña2(Contraseña2) {
+      if(passwor2 = password){
+        this.Contraseña2 = Contraseña2;
+            return true;
+      }else{
+        this.Contraseña2 = "";
+      return false; //
+      }
+   
+  }
 } //class validarContacto
 
 //----------Se agrega una 'oreja' que se activa cuando se carga todo el DOM----------//
@@ -75,9 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
     secondSurname: document.getElementById("inputSecondSurName"),
     email: document.getElementById("inputEmail"),
     phone: document.getElementById("inputPhone"),
+    password: document.getElementById("userPass"),
+    password2: document.getElementById("userPassconfirm"),
   };
   const submitButton = document.getElementById("submitForm"); //Se trae el botón de 'Enviar'
-
+  let users = JSON.parse(localStorage.getItem("users")) || [];
   //----------Se crean los elementos <p> para los mensajes de error----------//
   const errors = {}; //Se crea un objeto vacío para los <p> de los mensajes de error
 
@@ -111,6 +139,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const padreTelefono = inputs[actualTelefono].parentElement;
   padreTelefono.appendChild(crearParrafoTelefono);
 
+  const actualContraseña = "password";
+  const crearParrafoContraseña = document.createElement("p");
+  errors[actualContraseña] = crearParrafoContraseña;
+  const padreContraseña = inputs[actualContraseña].parentElement;
+  padreContraseña.appendChild(crearParrafoContraseña);
+
+  const actualContraseña2 = "password2";
+  const crearParrafoContraseña2 = document.createElement("p");
+  errors[actualContraseña2] = crearParrafoContraseña2;
+  const padreContraseña2 = inputs[actualContraseña2].parentElement;
+  padreContraseña2.appendChild(crearParrafoContraseña2);
+
   //----------Se configuran las validaciones y los mensajes de error----------//
 
   const contacto = new validarContacto(); //Se crea una instancia de la clase validarContacto
@@ -121,6 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
     secondSurname: (value) => contacto.setSecondSurname(value.trim()),
     email: (value) => contacto.setCorreo(value.trim()),
     phone: (value) => contacto.setTelefono(value.trim()),
+    password: (value) => contacto.setContraseña(value.trim()),
+    password2: (value) => contacto.setContraseña(value.trim()),
   };
 
   const errorMessages = {
@@ -144,6 +186,14 @@ document.addEventListener("DOMContentLoaded", () => {
     phone: {
       error: "El teléfono debe contener 10 dígitos, sin espacios ni guiones",
       success: "El teléfono introducido es válido",
+    },
+    password: {
+      error: "La contraseña no es valida",
+      success: "La contraseña es valida ",
+    },
+    password2: {
+      error: "La contraseña no coincide",
+      success: "La contraseña coinciden",
     },
   };
 
@@ -186,10 +236,12 @@ document.addEventListener("DOMContentLoaded", () => {
   //Se coloca un addEventListener que enviará el formulario
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-
+    GuardarDatos();
     if (!validateForm()) {
       //Se confirma que el formulario está validado antes de ser enviado
+      
       return;
+      
     }
 
     const plantillaParametros = {
@@ -198,6 +250,8 @@ document.addEventListener("DOMContentLoaded", () => {
       secondSurname: inputs.secondSurname.value.trim(),
       email: inputs.email.value.trim(),
       phone: inputs.phone.value.trim(),
+      password: inputs.password.value.trim(),
+      password2: inputs.password2.value.trim(),
       about: document.getElementById("inputAbout").value.trim(),
       message: document
         .getElementById("exampleFormControlTextarea1")
@@ -228,3 +282,59 @@ document.addEventListener("DOMContentLoaded", () => {
       });      
   });
 });
+let users = JSON.parse(localStorage.getItem("users")) || [];
+function GuardarDatos(){
+  
+    
+    const userName = document.getElementById("inputName");
+    const userApellidoP = document.getElementById("inputFirstSurName");
+    const userApellidoM = document.getElementById("inputSecondSurName");
+    const userCorreo = document.getElementById("inputEmail");
+    const userTelefono = document.getElementById("inputPhone");
+    const userPass = document.getElementById("userPass");
+    const userPass2 = document.getElementById("userPassconfirm");
+        let isValid = true;
+        // Validar que todos los campos estén completos
+        if (isValid) {
+            let newUser = {
+                Nombre: userName.value,
+                ApellidoPaterno: userApellidoP.value,
+                ApellidoMaterno: userApellidoM.value,
+                Correo: userCorreo.value,
+                Telefono: userTelefono.value,
+                Contraseña: userPass.value,
+            };
+
+            
+            users.push(newUser);
+            // Guardar el arreglo actualizado en localStorage
+            localStorage.setItem("users", JSON.stringify(users));
+
+            swal.fire({
+                title:"Usuario Registrado",
+               icon: 'success',
+                width: '40%',
+                background: '#D9A796',
+                showConfirmButton: true,
+                confirmButtonColor:' #05888d',
+                time:2000
+                
+            }) 
+             userName.value="";
+     userApellidoP.value="";
+     userApellidoM.value="";
+     userCorreo.value="";
+     userTelefono.value="";
+    userPass2.value="";
+           userPass.value="";
+            console.log("Nuevo usuario registrado:", newUser);
+            console.log("Usuarios actuales en localStorage:", users);
+            
+            setTimeout(function(){ 
+              window.location.href = "http://127.0.0.1:5500/HTML/inicioSesion.html"; 
+              }, 3 * 1000);
+        } 
+        
+    };
+   
+

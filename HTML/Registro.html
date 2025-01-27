@@ -10,10 +10,10 @@
    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Love+Light:wght@400&display=swap" rel="stylesheet">
-   <link rel="icon" href="../IMG/favicon.ico" type="image/x-icon">
+   <link rel="icon" href="./IMG/favicon.ico" type="image/x-icon">
        <!-- Archivo CSS personalizado -->
        <link rel="stylesheet" href="../CSS/styles.css">
-    <title>Registro</title>
+    <title>Document</title>
 </head>
 <body>
     <!-- Section for the main navbar -->
@@ -21,6 +21,7 @@
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" id="main-navbar"></nav>
     <!---------------------------->
 <!-- Inicio Login -->
+<form class="row g-3" id="form">
       <div class="wrapper">
         <div class="login_boxR">
             <div class="login-header">
@@ -28,26 +29,26 @@
             </div>
             <div class="input-box">
                 <label for="userName" class="label">Nombre*</label>
-                <input type="text" id="userName" class="input-fiel" required placeholder="Nombre(s)">
+                <input type="text" id="inputName" class="input-fiel" required placeholder="Nombre(s)">
                 <i class="bx bx-user icon"></i>
             </div>
             <div class="inputR">
-                <label for="userApellido1" class="label">Primer apellido*</label>
+                <label for="inputFirstSurName" class="label">Primer apellido*</label>
                 <label for="userApellido2" class="label">Segundo apellido</label><br>
-                <input type="text" id="userApellido1" class="Apellido1" required placeholder="Primer apellido">
-                <input type="text" id="userApellido2" class="Apellido2" required placeholder="Segundo apellido">
+                <input type="text" id="inputFirstSurName" class="Apellido1 apellidoM" required placeholder="Primer apellido">
+                <input type="text" id="inputSecondSurName" class="Apellido2" required placeholder="Segundo apellido">
                 <i class="bx bx-user icon"></i>
                 <div class="mensaje-error error-appellido">El apellido es inválido*</div>
             </div>
             <div class="input-box">
                 <label for="userCorreo" class="label">Correo electrónico*</label>
-                <input type="text" id="userCorreo" class="input-fiel" required placeholder="Correo electrónico">
+                <input type="text" id="inputEmail" class="input-fiel" required placeholder="Correo electrónico">
                 <i class="bx bx-user icon"></i>
-                <div class="mensaje-error error-email">Introduce un número válido.*</div>
+                <div class="mensaje-error error-email">Introduce un correo válido.*</div>
             </div>
             <div class="input-box">
                 <label for="userTelefono" class="label">Telefono*</label>
-                <input type="text" id="userTelefono" class="input-fiel" required placeholder="Correo electrónico">
+                <input type="text" id="inputPhone" class="input-fiel" required placeholder="Correo electrónico">
                 <i class="bx bx-user icon"></i>
                 <div class="mensaje-error error-email">Introduce un correo válido.*</div>
             </div>
@@ -64,13 +65,15 @@
             </div>
             <div class="input-box">
                 <label for="confirmpass" class="label">Confirma contraseña*</label>
-                <input type="password" id="confirmpass" class="input-fiel" required placeholder="Repite la contraseña">
+                <input type="password" id="userPassconfirm" class="input-fiel" required placeholder="Repite la contraseña">
                 <i class="bx bx-lock-alt icon"></i>
                 <div class="mensaje-error error-contraseña2">No es la misma contraseña.*</div>
             </div>
-        <button id="registerButton" class="botonR">Registrase</button>
+        <button  id="submitForm" class="botonR">Registrase</button>
+        
         </div>
       </div>
+    </form>
       <!-- Fin del Login -->
 
 <!------------- Footer ---------->
@@ -100,9 +103,10 @@
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript"
 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
+<script src="../JS/contacto_jmg.js"></script>
 <script type="text/javascript">
   emailjs.init('Ubs8e-xvp0qtDK7eX')
 </script>

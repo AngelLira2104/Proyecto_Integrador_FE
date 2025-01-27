@@ -234,7 +234,7 @@ register a{
     background-image: url("../IMG/fondologin.webp");
     position: relative;
     width: 600px 20px 20px;
-    height: 830px;
+    height: 1030px;
     backdrop-filter: blur(25px);
     border: 2px solid var(--prymary-color);
     border-radius:15px;
