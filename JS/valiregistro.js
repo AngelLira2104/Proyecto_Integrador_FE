@@ -291,7 +291,7 @@ class validarContacto {
               console.log("Usuarios actuales en localStorage:", users);
               
               setTimeout(function(){ 
-                window.location.href = "http://127.0.0.1:5500/HTML/inicioSesion.html"; 
+                window.location.href = urlInicioSesion.pathname; 
                 }, 1.5 * 1000);
           } 
           
