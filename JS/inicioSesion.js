@@ -17,7 +17,7 @@ btnInicioSesion.addEventListener("click", function (event) {
             for (let i = 0; i < usuarios.length; i++){
                 if(usuarios[i]["Correo"] === nombreUsuario.value && usuarios[i]["Contraseña"] === pwdUsuario.value){
                     bandera = true;
-                    sessionStorage.setItem("LoeggedUser", usuarios[i]["Nombre"]);
+                    sessionStorage.setItem("LoggedUser", usuarios[i]["Nombre"]);
                     break;
                 }
             }
