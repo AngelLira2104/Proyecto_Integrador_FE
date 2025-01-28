@@ -1,12 +1,5 @@
 
-const name  = document.getElementById("inputName"),
-firstSurname = document.getElementById("inputFirstSurName"),
-secondSurname = document.getElementById("inputSecondSurName"),
-email = document.getElementById("inputEmail"),
-phone = document.getElementById("inputPhone"),
-password = document.getElementById("userPass"),
-password2 = document.getElementById("userPassconfirm");
-//----------Se crea la clase validarContacto----------//
+
 
 class validarContacto {
     nombre = "";
@@ -90,9 +83,8 @@ class validarContacto {
       }
     }
     setContraseña2(Contraseña2) {
-        if(password2 = password){
+        if(Contraseña2!=Contraseña){
           this.Contraseña2 = Contraseña2;
-          
               return true;
         }else{
           this.Contraseña2 = "";
@@ -253,20 +245,28 @@ class validarContacto {
   });
   let users = JSON.parse(localStorage.getItem("users")) || [];
   function GuardarDatos(){
+    
+      
+      const userName = document.getElementById("inputName");
+      const userApellidoP = document.getElementById("inputFirstSurName");
+      const userApellidoM = document.getElementById("inputSecondSurName");
+      const userCorreo = document.getElementById("inputEmail");
+      const userTelefono = document.getElementById("inputPhone");
+      const userPass = document.getElementById("userPass");
+      const userPass2 = document.getElementById("userPassconfirm");
           let isValid = true;
           // Validar que todos los campos estén completos
           if (isValid) {
               let newUser = {
-                  Nombre: name.value,
-                  ApellidoPaterno: firstSurname.value,
-                  ApellidoMaterno:secondSurname .value,
-                  Correo: email.value,
-                  Telefono: phone.value,
-                  Contraseña:password2.value,
+                  Nombre: userName.value,
+                  ApellidoPaterno: userApellidoP.value,
+                  ApellidoMaterno: userApellidoM.value,
+                  Correo: userCorreo.value,
+                  Telefono: userTelefono.value,
+                  Contraseña: userPass.value,
               };
   
-              
-              users.push(newUser);
+                           users.push(newUser);
               // Guardar el arreglo actualizado en localStorage
               localStorage.setItem("users", JSON.stringify(users));
   
@@ -275,7 +275,7 @@ class validarContacto {
                  icon: 'success',
                   width: '40%',
                   background: '#D9A796',
-                  showConfirmButton: true,
+                  showConfirmButton: false,
                   confirmButtonColor:' #05888d',
                   time:2000
                   
@@ -289,10 +289,10 @@ class validarContacto {
              userPass.value="";
               console.log("Nuevo usuario registrado:", newUser);
               console.log("Usuarios actuales en localStorage:", users);
-              localStorage.setItem('UsersLogin', JSON.stringify(userData));
+              
               setTimeout(function(){ 
-                window.location.href = urlInicioSesion.pathname; 
-                }, 3 * 1000);
+                window.location.href = "http://127.0.0.1:5500/HTML/inicioSesion.html"; 
+                }, 1.5 * 1000);
           } 
           
       };
