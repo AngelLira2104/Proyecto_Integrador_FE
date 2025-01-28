@@ -27,7 +27,9 @@
             <div class="login-header">
                 <span>Inicio de Sesión</span>
             </div>
-            <div class="mensaje-error error-ingreso">Las credenciales usadas no coinciden*</div>
+            <!-- Alerta para Usuario o contraseña no valido -->
+            <div id="WrongUserInfo" class="alert alert-danger" style="display: none;" role="alert">
+            </div>
             <div class="input-box">
                 <label for="userEmail" class="label">Correo electrónico</label>
                 <input type="text" id="user" class="input-fiel" required placeholder="Correo electrónico">
@@ -42,7 +44,7 @@
                 <a href="./registro.html">Registrarse</a><br>
                 <a href="./olvcontraseña">Olvide mi contraseña</a>
             </div>
-            <button class="boton">Iniciar</button>
+            <button class="boton" id="btnInicioSesion">Iniciar</button>
         </div>
       </div>
       <!-- Fin del Login -->
@@ -55,8 +57,7 @@
 <!-- Navigation JS -->
 <script src="../JS/navigation.js"></script>
 <script src="../JS/contacto_jmg.js"></script>
-<!-- <script src="../JS/validacion.js"></script> -->
-<script src="../JS/script.js"></script>
+<script src="../JS/inicioSesion.js"></script>
 <!-- Animaciones personalizadas -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
