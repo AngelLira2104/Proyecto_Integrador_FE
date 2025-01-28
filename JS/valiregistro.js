@@ -1,3 +1,11 @@
+
+const name  = document.getElementById("inputName"),
+firstSurname = document.getElementById("inputFirstSurName"),
+secondSurname = document.getElementById("inputSecondSurName"),
+email = document.getElementById("inputEmail"),
+phone = document.getElementById("inputPhone"),
+password = document.getElementById("userPass"),
+password2 = document.getElementById("userPassconfirm");
 //----------Se crea la clase validarContacto----------//
 
 class validarContacto {
@@ -51,9 +59,11 @@ class validarContacto {
     }
     setCorreo(correo) {
       const regex = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+      const nameFromLocalStorage = localStorage.getItem("Correo")
       if (regex.test(correo)) {
-        this.correo = correo;
+          this.correo = correo;
         return true;
+
       } else {
         this.correo = "";
         return false; //
@@ -80,8 +90,9 @@ class validarContacto {
       }
     }
     setContraseña2(Contraseña2) {
-        if(passwor2 = password){
+        if(password2 = password){
           this.Contraseña2 = Contraseña2;
+          
               return true;
         }else{
           this.Contraseña2 = "";
@@ -95,7 +106,7 @@ class validarContacto {
   document.addEventListener("DOMContentLoaded", () => {
     //----------Se crea un objeto para traer los campos del formulario desde el HTML----------//
     const inputs = {
-      name: document.getElementById("inputName"),
+      name : document.getElementById("inputName"),
       firstSurname: document.getElementById("inputFirstSurName"),
       secondSurname: document.getElementById("inputSecondSurName"),
       email: document.getElementById("inputEmail"),
@@ -104,7 +115,7 @@ class validarContacto {
       password2: document.getElementById("userPassconfirm"),
     };
     const submitButton = document.getElementById("submitForm"); //Se trae el botón de 'Enviar'
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+
     //----------Se crean los elementos <p> para los mensajes de error----------//
     const errors = {}; //Se crea un objeto vacío para los <p> de los mensajes de error
   
@@ -227,81 +238,31 @@ class validarContacto {
     //----------Se crea una función que valida el formulario antes de ser enviado----------//
     function validateForm() {
       return Object.keys(inputs).every((key) => fieldValidation(key));
+     
     }
-  
-    //----------Se inicializa EmailJS----------//
-    emailjs.init("Ubs8e-xvp0qtDK7eX"); //Se coloca la PUBLIC KEY
-  
     //Se coloca un addEventListener que enviará el formulario
     submitButton.addEventListener("click", (event) => {
       event.preventDefault();
-      GuardarDatos();
+
       if (!validateForm()) {
         //Se confirma que el formulario está validado antes de ser enviado
-        
         return;
-        
       }
-  
-      const plantillaParametros = {
-        name: inputs.name.value.trim(),
-        firstSurname: inputs.firstSurname.value.trim(),
-        secondSurname: inputs.secondSurname.value.trim(),
-        email: inputs.email.value.trim(),
-        phone: inputs.phone.value.trim(),
-        password: inputs.password.value.trim(),
-        password2: inputs.password2.value.trim(),
-        about: document.getElementById("inputAbout").value.trim(),
-        message: document
-          .getElementById("exampleFormControlTextarea1")
-          .value.trim(),
-      };
-  
-      emailjs
-        .send("service_hoodrj5", "template_3hj7cl3", plantillaParametros)
-        .then((response) => {
-          console.log(
-            "Formulario enviado con éxito!",
-            response.status,
-            response.text
-          );
-  
-          const alertaExito = document.getElementById("alerta-exito");//Se trae la alerta con ID: alerta-exitoso desde HTML
-          alertaExito.classList.remove("d-none");//Se muestra la alerta de envío exitoso
-  
-          setTimeout(() => {
-            alertaExito.classList.add("d-none");
-          }, 5000);//Se elimina la alerta de envío exitoso automáticamente después de 5 segundos
-  
-          document.getElementById("form").reset(); //Se limpia el formulario después de enviar
-          Object.keys(errors).forEach((key) => {
-            errors[key].textContent = ""; //Se limpian los mensajes de error de todos los campos
-            inputs[key].style.border = ""; //Se reestablecen los bordes de todos los campos
-          });
-        });      
+      GuardarDatos();
     });
   });
   let users = JSON.parse(localStorage.getItem("users")) || [];
   function GuardarDatos(){
-    
-      
-      const userName = document.getElementById("inputName");
-      const userApellidoP = document.getElementById("inputFirstSurName");
-      const userApellidoM = document.getElementById("inputSecondSurName");
-      const userCorreo = document.getElementById("inputEmail");
-      const userTelefono = document.getElementById("inputPhone");
-      const userPass = document.getElementById("userPass");
-      const userPass2 = document.getElementById("userPassconfirm");
           let isValid = true;
           // Validar que todos los campos estén completos
           if (isValid) {
               let newUser = {
-                  Nombre: userName.value,
-                  ApellidoPaterno: userApellidoP.value,
-                  ApellidoMaterno: userApellidoM.value,
-                  Correo: userCorreo.value,
-                  Telefono: userTelefono.value,
-                  Contraseña: userPass.value,
+                  Nombre: name.value,
+                  ApellidoPaterno: firstSurname.value,
+                  ApellidoMaterno:secondSurname .value,
+                  Correo: email.value,
+                  Telefono: phone.value,
+                  Contraseña:password2.value,
               };
   
               
@@ -328,9 +289,9 @@ class validarContacto {
              userPass.value="";
               console.log("Nuevo usuario registrado:", newUser);
               console.log("Usuarios actuales en localStorage:", users);
-              
+              localStorage.setItem('UsersLogin', JSON.stringify(userData));
               setTimeout(function(){ 
-                window.location.href = "http://127.0.0.1:5500/HTML/inicioSesion.html"; 
+                window.location.href = urlInicioSesion.pathname; 
                 }, 3 * 1000);
           } 
           
