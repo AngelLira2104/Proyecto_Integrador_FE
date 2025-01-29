@@ -21,40 +21,41 @@
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" id="main-navbar"></nav>
     <!---------------------------->
 <!-- Inicio Login -->
-<form class="row g-3" id="form">
-      <div class="wrapper">
+<form class="form" id="form">
+      <div class="wrapperr">
         <div class="login_boxR">
             <div class="login-header">
                 <span>Regístrate</span>
             </div>
+            <form class="form form-register" id="form" novalidate>
             <div class="input-box">
                 <label for="userName" class="label">Nombre*</label>
-                <input type="text" id="inputName" class="input-fiel" required placeholder="Nombre(s)">
+                <input name="Name" type="text" id="inputName" class="input-fiel" required placeholder="Nombre(s)">
                 <i class="bx bx-user icon"></i>
             </div>
             <div class="inputR">
                 <label for="inputFirstSurName" class="label">Primer apellido*</label>
                 <label for="userApellido2" class="label">Segundo apellido</label><br>
-                <input type="text" id="inputFirstSurName" class="Apellido1 apellidoM" required placeholder="Primer apellido">
-                <input type="text" id="inputSecondSurName" class="Apellido2" required placeholder="Segundo apellido">
+                <input name="FirstSurName" type="text" id="inputFirstSurName" class="Apellido1 apellidoM" required placeholder="Primer apellido">
+                <input name="SecondSurName" type="text" id="inputSecondSurName" class="Apellido2" required placeholder="Segundo apellido">
                 <i class="bx bx-user icon"></i>
                 <div class="mensaje-error error-appellido">El apellido es inválido*</div>
             </div>
             <div class="input-box">
                 <label for="userCorreo" class="label">Correo electrónico*</label>
-                <input type="text" id="inputEmail" class="input-fiel" required placeholder="Correo electrónico">
+                <input name="Email" type="text" id="inputEmail" class="input-fiel" required placeholder="Correo electrónico">
                 <i class="bx bx-user icon"></i>
                 <div class="mensaje-error error-email">Introduce un correo válido.*</div>
             </div>
             <div class="input-box">
                 <label for="userTelefono" class="label">Telefono*</label>
-                <input type="text" id="inputPhone" class="input-fiel" required placeholder="Correo electrónico">
+                <input name="Phone" type="text" id="inputPhone" class="input-fiel" required placeholder="Correo electrónico">
                 <i class="bx bx-user icon"></i>
                 <div class="mensaje-error error-email">Introduce un correo válido.*</div>
             </div>
             <div class="input-box">
                 <label for="userPass" class="label">Contraseña*</label>
-                <input type="password" id="userPass" class="input-fiel" required placeholder="Debe contener de 8-20 caracteres...">
+                <input name="Passs" type="password" id="userPass" class="input-fiel" required placeholder="Debe contener de 8-20 caracteres...">
                 <i class="bx bx-lock-alt icon"></i>
                 <div class="mensaje-error error-contraseña">La contraseña no tiene los requerimientos necesarios.*</div>
 
@@ -65,15 +66,15 @@
             </div>
             <div class="input-box">
                 <label for="confirmpass" class="label">Confirma contraseña*</label>
-                <input type="password" id="userPassconfirm" class="input-fiel" required placeholder="Repite la contraseña">
+                <input name="name="Passs2"" type="password" id="userPassconfirm" class="input-fiel" required placeholder="Repite la contraseña">
                 <i class="bx bx-lock-alt icon"></i>
-                <div class="mensaje-error error-contraseña2">No es la misma contraseña.*</div>
+                <div class="alert-error">Todos los campos son obligatorios*</div>
             </div>
-        <button  id="submitForm" class="botonR">Registrase</button>
-        
+        <button  id="submit" class="botonR">Registrase</button>
+         </form>
         </div>
       </div>
-    </form>
+
       <!-- Fin del Login -->
 
 <!------------- Footer ---------->
