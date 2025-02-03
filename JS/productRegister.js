@@ -60,7 +60,7 @@ btnRegistrar.addEventListener("click", function (event) {
   registerSuccess.style.display = "none";
 
   //RegExp for validations - JMG
-  const idRegex = /^[a-zA-Z0-9]{1,12}$/;
+  const idRegex = /^[0-9]{1,12}$/;
   const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{4,}$/;
   const descriptionRegex = /^.{10,}$/;
   const stockRegex = /^[0-9]+$/;
@@ -134,12 +134,19 @@ btnRegistrar.addEventListener("click", function (event) {
     localStorage.setItem("productos", JSON.stringify(productos));
     //Aqui se muestra el mensaje de exito
     registerSuccess.style.display = "block";
-    productName.value = "";
-    productDescription.value = "";
-    productStock.value = "";
-    productUnitPrice.value = "";
-    productImage.value = "";
     productID.value = "";
+    productID.style.border = "";
+    productName.value = "";
+    productName.style.border = "";
+    productDescription.value = "";
+    productDescription.style.border = "";
+    productImage.value = "";
+    productImage.style.border = "";
+    productStock.value = "";
+    productStock.style.border = "";
+    productUnitPrice.value = "";
+    productUnitPrice.style.border = "";    
+
     duplicateIdAlert.style.display = "none";
     duplicateIdAlert.classList.add("d-none");
     idAlert.classList.add("d-none");    

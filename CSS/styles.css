@@ -128,3 +128,9 @@ img {
 .card{
     height: 850px;
 }
+
+
+#btnEnviarContacto {
+    background-color: #CDA1EE !important;
+    border: #CDA1EE;
+}

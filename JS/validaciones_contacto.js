@@ -69,7 +69,7 @@ class validarContacto {
     }
   }
   setTelefono(telefono) {
-    const regex = /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/;
+    const regex = /^(?!0)(?!0000000000)\d{10}$/;
     if (regex.test(telefono)) {
       this.telefono = telefono;
       return true;

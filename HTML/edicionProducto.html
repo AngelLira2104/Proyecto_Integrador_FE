@@ -43,19 +43,19 @@
             <h2>Registrar Producto:</h2>
             <!-- Alerta para Indicar que se registro con exito -->
             <div id="alertExitoRegistro" class="alert alert-success" role="alert" style="display: none;">
-                <b>Exito!:</b> Producto registrado con exito.
+                <b>¡Éxito!:</b> Producto registrado correctamente.
             </div>
             <!-- Insert any input fields you want for form 1 here -->
             <div class="row mb-3">
                 <label for="inputID" class="col-sm-2 col-form-label required">ID</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputID"
-                        placeholder="Hasta 12 caracteres alfanuméricos (ejemplo: RosaAzul0001)">
+                        placeholder="Hasta 12 dígitos (ejemplo: 0001)" maxlength="12">
                 </div>
             </div>
             <!-- Alerta para ID no válido -->
             <div id="alertId" class="alert alert-danger d-none" role="alert">
-                <b>Error:</b> Solo ingresa hasta 12 caracteres alfanuméricos.
+                <b>Error:</b> Solo ingresa hasta 12 caracteres numéricos.
             </div>
             <!-- Alerta para ID duplicado -->
             <div id="alertIdDuplicado" class="alert alert-danger d-none" role="alert">
