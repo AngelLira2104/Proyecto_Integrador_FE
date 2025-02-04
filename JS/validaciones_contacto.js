@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     about: document.getElementById("inputAbout"),
     message: document.getElementById("exampleFormControlTextarea1"),
   };
-  const submitButton = document.getElementById("submitForm"); //Se trae el botón de 'Enviar'
+  const submitButton = document.getElementById("btnEnviarContacto"); //Se trae el botón de 'Enviar'
 
   //----------Se crean los elementos <p> para los mensajes de error----------//
   const errors = {}; //Se crea un objeto vacío para los <p> de los mensajes de error
