@@ -19,6 +19,9 @@
     min-height: 200px;
     height: 400px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
 }
 
 .card:hover {
@@ -26,22 +29,33 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
+.img-box {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
 .card-img-top {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    width: 100%; 
-    height: 400px; 
-    object-fit: cover; 
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
     display: block;
-    object-position: center; 
+    margin: 0;
+    padding: 0;
 }
 
 .card-body {
     padding: 15px;
     font-size: 0.9rem;
-    padding-bottom: 40px; 
+    padding-bottom: 40px;
+    line-height: normal;
+    flex-grow: 1;
 }
-
 
 .card .btn {
     border-radius: 5px;
@@ -89,17 +103,13 @@ button:focus {
     outline: none !important;
 }
 
-
-
-
 @media (max-width: 768px) {
     .card .btn {
-        display: block; 
+        display: block;
         opacity: 1;
         visibility: visible;
     }
 }
-
 
 @media (max-width: 480px) {
     .card-container {
@@ -122,10 +132,9 @@ footer {
     row-gap: 45px !important;
 }
 
-
 @media (min-width: 480px) and (max-width: 768px) {
     .card .btn {
-        display: block; 
+        display: block;
         opacity: 1;
         visibility: visible;
     }
