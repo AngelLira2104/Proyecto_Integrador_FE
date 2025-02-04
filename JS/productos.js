@@ -17,25 +17,11 @@ function addItem(item) {
     itemsContainer.insertAdjacentHTML("beforeend", itemHTML);
 }
 
-function getData(){
-    fetch('../JSON/productos.json').then((response) => {
-        response.json().then((res) => {
-            localStorage.setItem("productos", JSON.stringify(res.productos));
-            //console.log(res.productos);
-        });
-    }).catch((err) => {
-        console.log("Error al cargar el archivo JSON");
-    });
-}
-
-if (productos.length === 0){
-    getData();
-} 
-
 productos.forEach(producto => {
     addItem({
         name: producto.Nombre,
         img: producto.Imagen,
-        description: producto.Descripcion
+         description: producto.Descripcion
     });
 });
+
