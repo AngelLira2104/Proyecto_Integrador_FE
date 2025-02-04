@@ -9,8 +9,8 @@ const formRegister = document.getElementById("form");
 const btnenviar= document.getElementById("submit");
 const alertaerror = document.querySelector(".alert-error")
 const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-const NamePApeMApe =/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s-]{4,16}$/u;
-const telefonoRegex = /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/
+const NamePApeMApe =/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s-]{3,16}$/u;
+const telefonoRegex = /^(?!0)(?!0000000000)\d{10}$/
 const contraseñaRegex = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
 //const passwordRegex = /^.{4,12}$];
 const estadovalidacionCampos = {
@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
     enviarformulario();
   })
   userName.addEventListener('input',()=>{
-    validarCampo(NamePApeMApe,userName,"El nombre tiene que ser de 4 a 16 dígitos");
+    validarCampo(NamePApeMApe,userName,"El nombre tiene que ser de 3 a 16 dígitos");
   });
   userApellidoP.addEventListener('input',()=>{
-    validarCampo(NamePApeMApe,userApellidoP,"El apellido materno tiene que ser de 4 a 16 dígitos");
+    validarCampo(NamePApeMApe,userApellidoP,"El apellido materno tiene que ser de 3 a 16 dígitos");
   });
   userApellidoM.addEventListener('input',()=>{
-    validarCampo(NamePApeMApe,userApellidoM,"El apellido paterno tiene que ser de 4 a 16 dígitos");
+    validarCampo(NamePApeMApe,userApellidoM,"El apellido paterno tiene que ser de 3 a 16 dígitos");
   });
   userCorreo.addEventListener('input',()=>{
     validarCampo(emailRegex,userCorreo,"El correo debe incluir '@' y un dominio");
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     validarCampo(telefonoRegex,userTelefono,"El teléfono debe contener 10 dígitos, sin espacios ni guiones");
   });
   userPass.addEventListener('input',()=>{
-    validarCampo(contraseñaRegex,userPass,"La contraseña debe tener de 8 - 16 dígitos (Incluye una mayúscula, un símbolo especial, números y letras)");
+    validarCampo(contraseñaRegex,userPass,"(Incluye una mayúscula, un símbolo especial, números y letras)");
   });
   userPass2.addEventListener('input',()=>{
     validarCampo(contraseñaRegex,userPass2,"La constraseña no coincide");

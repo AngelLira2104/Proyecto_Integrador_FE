@@ -69,7 +69,7 @@ a:hover{
     position: relative;
     font-size: 30px;
     color: var(--black-color);
-    left: 70px;
+    left: 100px;
     top: -5px;
     display: block;
 }
@@ -225,6 +225,7 @@ register a{
    .botonR{
        position: relative;
        background-color: whitesmoke;
+       top: 10px;
        height: 30px;
        width: 90px;
        left: 40%;
@@ -235,7 +236,7 @@ register a{
     background-image: url("../IMG/fondologin.webp");
     position: relative;
     width: 600px 20px 20px;
-    height: 830px;
+    height: 780px;
     backdrop-filter: blur(25px);
     border: 2px solid var(--prymary-color);
     border-radius:15px;
@@ -258,4 +259,13 @@ register a{
 }
 .reg{
     color:#000000
+}
+.labell{
+
+    left: 50px;
+}
+.alert-error{
+    position: relative;
+    left: 90px;
+    color: black;
 }
