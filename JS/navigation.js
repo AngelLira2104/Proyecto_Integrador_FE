@@ -75,12 +75,12 @@ window.addEventListener("load", function(event){
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" aria-current="page" href="${urlIndex.pathname}">Inicio</a>
                     </li>                  
-                    <li class="nav-item">
-                        <a class="nav-link main-nav-link" href="${urlProductos.pathname}">Productos</a>
-                    </li>
-                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link main-nav-link" href="${urlEdicionProductos.pathname}">Edición de Productos</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle secondary-nav-dropmenu" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
+                        <ul class="dropdown-menu">
+                        <li><a class="nav-link main-nav-link" href="${urlProductos.pathname}">Productos</a></li>
+                        <li> <a class="nav-link main-nav-link" href="${urlEdicionProductos.pathname}">Edición de Productos</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link main-nav-link" href="${urlContact.pathname}">Contáctanos</a>
@@ -95,48 +95,7 @@ window.addEventListener("load", function(event){
             </div>
             </div>`;
         }
-        let secondaryNavContent = `<li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle secondary-nav-dropmenu" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Flores</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Rosas</a></li>
-              <li><a class="dropdown-item" href="#">Tulipanes</a></li>
-              <li><a class="dropdown-item" href="#">Orquideas</a></li>
-              <li><a class="dropdown-item" href="#">Girasoles</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Otras</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle secondary-nav-dropmenu" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">De temporada</a></li>
-              <li><a class="dropdown-item" href="#">Locales</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Ultimas existencias</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle secondary-nav-dropmenu" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Eventos</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Boda</a></li>
-              <li><a class="dropdown-item" href="#">Baby shower</a></li>
-              <li><a class="dropdown-item" href="#">Cumpleaños</a></li>
-              <li><a class="dropdown-item" href="#">Primera comunión</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Personalizados</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle secondary-nav-dropmenu" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Ramos</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Colección San Valentin</a></li>
-              <li><a class="dropdown-item" href="#">Colección Aniversario</a></li>
-              <li><a class="dropdown-item" href="#">Colección Navidad</a></li>
-              <li><a class="dropdown-item" href="#">Colección Año Nuevo</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Personalizados</a></li>
-            </ul>
-        </li>`;
+        
         let footerContent = `<div class="container">
             <div class="row">
                 <div class="col-md-3">

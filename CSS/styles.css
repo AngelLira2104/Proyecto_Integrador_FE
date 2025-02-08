@@ -134,3 +134,10 @@ img {
     background-color: #CDA1EE !important;
     border: #CDA1EE;
 }
+.dropdown-menu{
+    background-color: #AB5A8C;
+    border: none;
+}
+.dropdown-menu:hover{
+    background-color: #ab5a8cf6;
+}
