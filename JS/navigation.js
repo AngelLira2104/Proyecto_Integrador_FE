@@ -76,7 +76,7 @@ window.addEventListener("load", function(event){
                         <a class="nav-link main-nav-link" aria-current="page" href="${urlIndex.pathname}">Inicio</a>
                     </li>                  
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle secondary-nav-dropmenu" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
+                        <a class="nav-link dropdown-toggle secondary-nav-dropmenu" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Servicios</a>
                         <ul class="dropdown-menu">
                         <li><a class="nav-link main-nav-link" href="${urlProductos.pathname}">Productos</a></li>
                         <li> <a class="nav-link main-nav-link" href="${urlEdicionProductos.pathname}">Edición de Productos</a></li>
