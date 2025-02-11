@@ -1,10 +1,43 @@
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px 40px !important;
+    gap: 20px;
     padding: 20px;
     margin-bottom: 100px;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-grow: 1;
 }
+
+
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        max-width: 100%;
+    }
+}
+
 
 .card {
     border-radius: 15px;
@@ -57,6 +90,7 @@
     flex-grow: 1;
 }
 
+
 .card .btn {
     border-radius: 5px;
     font-size: 0.8rem;
@@ -103,6 +137,7 @@ button:focus {
     outline: none !important;
 }
 
+
 @media (max-width: 768px) {
     .card .btn {
         display: block;
@@ -118,24 +153,15 @@ button:focus {
     }
 }
 
+
 footer {
     background-color: #f4f4f4;
     text-align: center;
     padding: 15px 0;
     border-top: 1px solid #ccc;
-    position: relative;
     width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
     margin-top: 50px;
-}
-
-.custom-row {
-    row-gap: 45px !important;
-}
-
-@media (min-width: 480px) and (max-width: 768px) {
-    .card .btn {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-    }
+    position: relative;
 }
