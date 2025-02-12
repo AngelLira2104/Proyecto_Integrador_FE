@@ -29,8 +29,8 @@
             </div>
             <form class="form form-register" id="form" novalidate>
             <div class="input-box">
-                <label for="userName" class="label">Nombre*</label>
-                <input name="Name" type="text" id="inputName" class="input-fiel" required placeholder="Nombre(s)">
+                <label for="inputName" class="label">Nombre*</label>
+                <input name="Name" type="text" id="inputName" class="input-fiel" autocomplete="name" placeholder="Nombre(s)">
             </div>
             <div class="inputR">
                 <div>
@@ -40,20 +40,20 @@
                 <input name="SecondSurName" type="text" id="inputSecondSurName" class="Apellido2" required placeholder="Segundo apellido">
             </div>
             <div class="input-box">
-                <label for="userCorreo" class="label">Correo electrónico*</label>
-                <input name="Email" type="text" id="inputEmail" class="input-fiel" required placeholder="Correo electrónico">
+                <label for="inputEmail" class="label">Correo electrónico*</label>
+                <input name="Email" type="text" id="inputEmail" class="input-fiel" autocomplete="email" placeholder="Correo electrónico">
             </div>
             <div class="input-box">
-                <label for="userTelefono" class="label">Teléfono*</label>
+                <label for="inputPhone" class="label">Teléfono*</label>
                 <input name="Phone" type="text" id="inputPhone" class="input-fiel" required placeholder="Teléfono (10 dígitos)">
             </div>
             <div class="input-box">
                 <label for="userPass" class="label">Contraseña*</label>
-                <input name="Passs" type="password" id="userPass" class="input-fiel" required placeholder="Debe contener de 8-20 caracteres...">
+                <input name="Passs" type="password" id="userPass" class="input-fiel" autocomplete="new-password" required placeholder="Debe contener de 8-20 caracteres...">
             </div>
             <div class="input-box">
-                <label for="confirmpass" class="label">Confirma contraseña*</label>
-                <input name="name="Passs2"" type="password" id="userPassconfirm" class="input-fiel" required placeholder="Repite la contraseña">
+                <label for="userPassconfirm" class="label">Confirma contraseña*</label>
+                <input name="name="Passs2"" type="password" id="userPassconfirm" class="input-fiel" autocomplete="new-password" placeholder="Repite la contraseña">
             </div>
             <div class="alert-error">Todos los campos son obligatorios*</div>
         <button  id="submit" class="botonR">Registrase</button>

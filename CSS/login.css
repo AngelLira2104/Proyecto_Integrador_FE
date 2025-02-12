@@ -41,9 +41,10 @@ a:hover{
 }
 .login_box{
     background-image: url("../IMG/fondologin.webp");
+    margin-top: -10em;
     position: relative;
     width: 400px;
-    height: 500px;
+    height: fit-content;
     backdrop-filter: blur(25px);
     border: 2px solid var(--prymary-color);
     border-radius:15px;
@@ -148,6 +149,7 @@ background:var(--black-color) ;
     position: relative;
     top: 40px;
     text-align: center;
+    margin-bottom: 60px;
 }
 .boton{
     top: -12%;
@@ -170,6 +172,10 @@ register a{
  left: 110px;
  width: 100px;
  top: 25px;
+}
+#WrongUserInfo{
+    position: relative;
+    margin-top: 30px;
 }
 
 @media only screen and (max-width:564px){
@@ -234,9 +240,10 @@ register a{
    }
    .login_boxR{
     background-image: url("../IMG/fondologin.webp");
+    margin-top: -40em;
     position: relative;
     width: 600px 20px 20px;
-    height: 780px;
+    height: fit-content;
     backdrop-filter: blur(25px);
     border: 2px solid var(--prymary-color);
     border-radius:15px;
@@ -268,4 +275,8 @@ register a{
     position: relative;
     left: 90px;
     color: black;
+}
+.footer{
+    position: relative;
+    margin-block-end: 50em;
 }
