@@ -110,10 +110,10 @@ window.addEventListener("load", function(event){
                     <!-- Footer content 2 Product Content-->
                     <p class="footer-content-title">Productos</p>
                     <ul class="list-unstyled">
-                        <li><a class="footer-link" href="#" onclick="solution()">Nueva Temporada</a></li>
-                        <li><a class="footer-link" href="#" onclick="solution()">Los Favoritos</a></li>
-                        <li><a class="footer-link" href="#" onclick="solution()">Ramos</a></li>
-                        <li><a class="footer-link" href="#" onclick="solution()">Eventos</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Nueva Temporada</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Los Favoritos</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Ramos</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Eventos</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-content">
@@ -122,17 +122,17 @@ window.addEventListener("load", function(event){
                     <ul class="list-unstyled">
                         <li><a class="footer-link" href="${urlContact.pathname}">Contáctanos</a></li>
                         <li><a class="footer-link" href="${urlAbout.pathname}">Nosotros</a></li>
-                        <li><a class="footer-link" href="#" onclick="solution()">Nuestro servicios</a></li>
-                        <li><a class="footer-link" href="#" onclick="solution()">Políticas de privacidad</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Nuestro servicios</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Políticas de privacidad</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-content">
                     <!-- Footer content 4 Support Content-->
                     <p class="footer-content-title">Soporte</p>
                     <ul class="list-unstyled">
-                        <li><a class="footer-link" href="#" onclick="solution()">Preguntas</a></li>
-                        <li><a class="footer-link" href="#" onclick="solution()">Compras</a></li>
-                        <li><a class="footer-link" href="#" onclick="solution()">Envíos</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Preguntas</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Compras</a></li>
+                        <li><a class="footer-link" href="#" onclick="solutionn()">Envíos</a></li>
                     </ul>
                 </div>
             </div>
