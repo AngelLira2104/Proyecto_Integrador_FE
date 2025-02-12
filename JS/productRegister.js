@@ -1,20 +1,21 @@
 const btnRegistrar = document.getElementById("btnRegistrar");
 const productName = document.getElementById("inputName");
-const productID = document.getElementById("inputID");
+const productColor = document.getElementById("inputColor");
 const productDescription = document.getElementById("inputDescription");
 const productImage = document.getElementById("inputImage");
 const productStock = document.getElementById("inputStock");
 const productUnitPrice = document.getElementById("inputUnitPrice");
-const duplicateIdAlert = document.getElementById("alertIdDuplicado");
 const idAlert = document.getElementById("alertId");
 const nameAlert = document.getElementById("alertNombre");
+const colorAlert = document.getElementById("alertColor");
 const descriptionAlert = document.getElementById("alertDescripcion");
 const stockAlert = document.getElementById("alertExistencia");
 const priceAlert = document.getElementById("alertPrecio");
+const alertProductoDuplicado = document.getElementById("alertProductoDuplicado");
 //Constante para el div que muestra el mensaje de exito para el registro
 const registerSuccess = document.getElementById("alertExitoRegistro");
 
-let productos = JSON.parse(localStorage.getItem("productos")) || [];
+//let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 window.addEventListener("load", function () {
   var sz = document.forms['formSelector'].elements['form'];
@@ -44,38 +45,27 @@ window.addEventListener("load", function () {
   }
 });
 
-btnRegistrar.addEventListener("click", function (event) {
+btnRegistrar.addEventListener("click", async function (event) {
   event.preventDefault();
   let isValid = true;
   productName.value = productName.value.trim();
-  productID.value = productID.value.trim();
+  productColor.value = productColor.value.trim();
   productDescription.value = productDescription.value.trim();
   productStock.value = productStock.value.trim();
   productUnitPrice.value = productUnitPrice.value.trim();
   productName.style.border = "";
-  productID.style.border = "";
   productDescription.style.border = "";
   productStock.style.border = "";
   productUnitPrice.style.border = "";
   registerSuccess.style.display = "none";
 
   //RegExp for validations - JMG
-  const idRegex = /^[0-9]{1,12}$/;
   const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{4,}$/;
   const descriptionRegex = /^.{10,}$/;
   const stockRegex = /^[0-9]+$/;
   const priceRegex = /^[0-9]+(\.[0-9]{1,2})?$/;
-  //const imageRegex = /^(https?:\/\/)?([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?$/;
   
 
-  if (!idRegex.test(productID.value)) {
-    idAlert.classList.remove("d-none");
-    productID.style.border = "solid red medium";
-    isValid = false;
-  } else {
-    idAlert.classList.add("d-none");
-    productID.style.border = "solid green medium";
-  }
   if (!nameRegex.test(productName.value)) {
     nameAlert.classList.remove("d-none");
     productName.style.border = "solid red medium";
@@ -83,6 +73,14 @@ btnRegistrar.addEventListener("click", function (event) {
   } else {
     nameAlert.classList.add("d-none");
     productName.style.border = "solid green medium";
+  }
+  if (!nameRegex.test(productColor.value)) {
+    colorAlert.classList.remove("d-none");
+    productColor.style.border = "solid red medium";
+    isValid = false;
+  } else {
+    colorAlert.classList.add("d-none");
+    productColor.style.border = "solid green medium";
   }
   if (!descriptionRegex.test(productDescription.value)) {
     descriptionAlert.classList.remove("d-none");
@@ -115,42 +113,61 @@ btnRegistrar.addEventListener("click", function (event) {
     productImage.style.border = "solid red medium";
     isValid = false;
   }
+  /*
   if (productos.find((producto) => producto.ID === productID.value)) {
     duplicateIdAlert.classList.remove("d-none");
     productID.style.border = "solid red medium";
     return; //Salir sin registrar
-}
+  }*/
   if (isValid) {
-    let product = {
-      Nombre: productName.value,
-      ID: productID.value,
-      Descripcion: productDescription.value,
-      Imagen: productImage.value,
-      Existencias: productStock.value,
-      PrecioUnitario: productUnitPrice.value,
-    };
+    let product = JSON.stringify({
+      "nombre": productName.value,
+      "precio": productUnitPrice.value,
+      "color": productColor.value,
+      "stock": productStock.value,
+      "descripcion": productDescription.value,
+      "imagen": productImage.value
+    });
     
-    productos.push(product);
-    localStorage.setItem("productos", JSON.stringify(productos));
+    // ----------- FETCH POST ---------------
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer: "); //Aqui va el token de authorization
+    myHeaders.append("Content-Type", "application/json");
+
+    const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: product,
+    redirect: "follow"
+    };
+
+    let resultado = await fetch("http://localhost:8080/api/productos/", requestOptions)
+      .then((response) => response.text())
+      .then((result) => {return result})
+      .catch((error) => console.error(error));
+    //productos.push(product);
+    //localStorage.setItem("productos", JSON.stringify(productos));
     //Aqui se muestra el mensaje de exito
-    registerSuccess.style.display = "block";
-    productID.value = "";
-    productID.style.border = "";
+    if (resultado.length !== 0){
+      registerSuccess.style.display = "block";
+    } else {
+      alertProductoDuplicado.style.display = "block";
+    }
     productName.value = "";
     productName.style.border = "";
     productDescription.value = "";
     productDescription.style.border = "";
+    productColor.value ="";
+    productColor.style.border ="";
     productImage.value = "";
     productImage.style.border = "";
     productStock.value = "";
     productStock.style.border = "";
     productUnitPrice.value = "";
     productUnitPrice.style.border = "";    
-
-    duplicateIdAlert.style.display = "none";
-    duplicateIdAlert.classList.add("d-none");
-    idAlert.classList.add("d-none");    
+  
     nameAlert.classList.add("d-none");
+    colorAlert.classList.add("d-none");
     descriptionAlert.classList.add("d-none");
     stockAlert.classList.add("d-none");
     priceAlert.classList.add("d-none");
