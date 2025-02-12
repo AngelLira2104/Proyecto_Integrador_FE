@@ -242,11 +242,10 @@ document.addEventListener("DOMContentLoaded", () => {
   //Se coloca un addEventListener que enviará el formulario
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-    mensajeconfirmado();
+
     if (!validateForm()) {
       //Se confirma que el formulario está validado antes de ser enviado
       return;
-      
     }
 
     const plantillaParametros = {
@@ -267,7 +266,13 @@ document.addEventListener("DOMContentLoaded", () => {
           response.status,
           response.text
         );
-//Se elimina la alerta de envío exitoso automáticamente después de 5 segundos
+
+        const alertaExito = document.getElementById("alerta-exito"); //Se trae la alerta con ID: alerta-exitoso desde HTML
+        alertaExito.classList.remove("d-none"); //Se muestra la alerta de envío exitoso
+
+        setTimeout(() => {
+          alertaExito.classList.add("d-none");
+        }, 5000); //Se elimina la alerta de envío exitoso automáticamente después de 5 segundos
 
         document.getElementById("form").reset(); //Se limpia el formulario después de enviar
         Object.keys(errors).forEach((key) => {
@@ -276,17 +281,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
   });
-  function mensajeconfirmado(){
-    swal.fire({
-      title:"¡Formulario enviado con éxito!",
-      text:"Muy pronto recibirás una respuesta, ¡mantente pendiente!",
-      confirmButtonText: "Aceptar",
-      icon: 'success',
-      width: '40%',
-      background: '#D9A796',
-      confirmButtonColor:' #05888d',
-      time:1000
-      
-  }) }
 });
-
