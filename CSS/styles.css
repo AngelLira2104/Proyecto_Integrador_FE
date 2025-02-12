@@ -145,6 +145,11 @@ img {
     background-color: #CDA1EE !important;
     border: #CDA1EE;
 }
+#btnEnviarContacto:hover {
+    background-color: #C4F8D4 !important;
+    border: #CDA1EE;
+    color: black;
+}
 .dropdown-menu{
     background-color: #AB5A8C;
     border: none;
@@ -152,7 +157,13 @@ img {
 .dropdown-menu:hover{
     background-color: #ab5a8cf6;
 }
-
 .nombre:hover {
     color: #CDA1EE;
+}
+.form-control {
+        border: 1.5px solid #CDA1EE;
+        border-radius: 8px;
+        padding: 5px;
+        width: 100%;
+        box-sizing: border-box;       
 }
