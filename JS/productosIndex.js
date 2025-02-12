@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <img src="${producto.Imagen}" class="card-img-top img-destacados" alt="${producto.Nombre}">
                             </div>
                             <div class="card-body star-product">
-                                <h5 class="card-title">${producto.Nombre}</h5>
+                                <h5 class="card-title" style="color:#AB5A8C"><b>${producto.Nombre}</b></h5>
                                 <p class="card-text"><small class="text-body-secondary star-product"><b>Precio:</b> $${producto.PrecioUnitario} MXN</small></p>
-                                <p class="card-text">Descripción: ${producto.Descripcion}</p>
+                                <p class="card-text"><b>Descripción:</b> ${producto.Descripcion}</p>
                                 <a href="#" class="btn btn-primary">Agregar al carrito</a>
                             </div>
                         </div>

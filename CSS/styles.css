@@ -60,15 +60,27 @@ h1 {
 }
 .github-btn{
     background-color: #AB5A8C;
+    border: #AB5A8C;
 }
 .github-btn:hover{
-    background-color: #AB5A8C;
+    background-color: #DCE0FF;
+    color: black;
+}
+.github-btn:active {
+    background-color: #DCE0FF !important;
+    color: black !important;
 }
 .in-btn{
     background-color: #EBB2DC;
+    border: #EBB2DC;
 }
 .in-btn:hover{
-    background-color: #EBB2DC;
+    background-color: #DCE0FF;
+    color: black;
+}
+.in-btn:active {
+    background-color: #DCE0FF !important;
+    color: black !important;
 }
 .star-product{
     color: white !important;
@@ -129,7 +141,6 @@ img {
     height: 850px;
 }
 
-
 #btnEnviarContacto {
     background-color: #CDA1EE !important;
     border: #CDA1EE;
@@ -140,4 +151,8 @@ img {
 }
 .dropdown-menu:hover{
     background-color: #ab5a8cf6;
+}
+
+.nombre:hover {
+    color: #CDA1EE;
 }
