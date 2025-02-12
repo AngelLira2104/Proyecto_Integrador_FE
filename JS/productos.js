@@ -1,5 +1,5 @@
 // Carga productos de localStorage y los muestra
-const productos = JSON.parse(localStorage.getItem("productos")) || [];
+//const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 function addItem(item) {
     const itemHTML = `
@@ -17,11 +17,17 @@ function addItem(item) {
     itemsContainer.insertAdjacentHTML("beforeend", itemHTML);
 }
 
-productos.forEach(producto => {
-    addItem({
-        name: producto.Nombre,
-        img: producto.Imagen,
-         description: producto.Descripcion
-    });
-});
+async function getData(){
+    const requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+      
+    fetch("http://localhost:8080/api/productos/", requestOptions)
+        .then((response) => response.json())
+        //.then((result) => console.log(result))
+        .then((result) => {result.forEach( element => { addItem({name:element.nombre,img:element.imagen,description:element.descripcion})})})
+        .catch((error) => console.error(error));
+}
 
+getData();
