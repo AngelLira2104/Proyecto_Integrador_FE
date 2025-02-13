@@ -36,12 +36,13 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    min-height: 80vh;
     background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 .login_box{
     background-image: url("../IMG/fondologin.webp");
-    margin-top: -10em;
+
     position: relative;
     width: 400px;
     height: fit-content;
@@ -56,7 +57,7 @@ a:hover{
 .login-header{
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
@@ -68,6 +69,7 @@ a:hover{
 }
 .login-header span{
     position: relative;
+    left: 10%;
     font-size: 30px;
     color: var(--black-color);
     left: 100px;
@@ -152,7 +154,6 @@ background:var(--black-color) ;
     margin-bottom: 60px;
 }
 .boton{
-    top: -12%;
     position: relative;
     background-color: whitesmoke;
     height: 30px;
@@ -255,9 +256,10 @@ register a{
 .wrapperr{
     width: 100%;
     display: flex;
+    margin-top: 38em;
     justify-content: center;
     align-items: center;
-    min-height: 140vh;
+    min-height: 20em;
     background-color: rgba(0,0,0,0.2);
 }
 .mensaje-error{
@@ -275,8 +277,4 @@ register a{
     position: relative;
     left: 90px;
     color: black;
-}
-.footer{
-    position: relative;
-    margin-block-end: 50em;
 }
