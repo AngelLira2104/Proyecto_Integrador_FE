@@ -36,7 +36,7 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    min-height: 80vh;
     background-color: rgba(0,0,0,0.2);
 }
 .login_box{
@@ -70,7 +70,7 @@ a:hover{
     position: relative;
     font-size: 30px;
     color: var(--black-color);
-    left: 100px;
+    left: 60px;
     top: -5px;
     display: block;
 }
@@ -254,10 +254,11 @@ register a{
 }
 .wrapperr{
     width: 100%;
+    margin-top:40em;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 140vh;
+    min-height: 40vh;
     background-color: rgba(0,0,0,0.2);
 }
 .mensaje-error{
@@ -276,7 +277,6 @@ register a{
     left: 90px;
     color: black;
 }
-.footer{
-    position: relative;
-    margin-block-end: 50em;
+.registro{
+    left: 300px;
 }
