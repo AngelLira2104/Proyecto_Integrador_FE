@@ -147,12 +147,12 @@ background:var(--black-color) ;
 }
 .register{
     position: relative;
-    top: 5px;
+    top: 40px;
     text-align: center;
     margin-bottom: 60px;
 }
 .boton{
-    top: -12%;
+    top: 0px;
     position: relative;
     background-color: whitesmoke;
     height: 30px;
@@ -164,7 +164,6 @@ background:var(--black-color) ;
 .boton:hover{
     background-color: #EBB2DC;
 }
-
 register a{
     font-weight: 500;
 }
@@ -172,7 +171,9 @@ register a{
  position: relative;
  left: 110px;
  width: 100px;
- top: 25px;
+}
+.altlogo{
+    top: 8px;
 }
 #WrongUserInfo{
     position: relative;
