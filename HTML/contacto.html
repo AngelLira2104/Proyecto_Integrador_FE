@@ -136,6 +136,8 @@
   <script src="../JS/validaciones_contacto.js"></script>
   <!-- <script src="../JS/validacion.js"></script> -->
   <!-- <script src="../JS/script.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./JS/Mensaje.js"></script>
   <!-- Animaciones personalizadas -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -151,9 +153,21 @@
       });
     });
   </script>
-
+<script>
+  function solutionn(){
+                swal.fire({
+                    title:"En implementación.",
+                              text: "Por el momento, esta función no está disponible. Actualmente, estamos trabajando en su implementación.",
+                              confirmButtonText: "Aceptar",
+                              icon: 'success',
+                              width: '40%',
+                              background: '#D9A796',
+                              confirmButtonColor:' #05888d',
+                              time:2000
+                              
+                          }) }
+</script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 </body>
 
 </html>

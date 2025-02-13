@@ -34,6 +34,10 @@
     <!-- Navigation JS -->
     <script src="../JS/navigation.js"></script>
     <!-- Productos JS -->
+     <!--  -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="./JS/Mensaje.js"></script>
+    <!--  -->
     <script src="../JS/productos.js" defer></script>
     <!-- Animaciones personalizadas -->
     <script>
@@ -49,6 +53,19 @@
                 });
             });
         });
+        function solutionn(){
+                swal.fire({
+                    title:"En implementación.",
+                              text: "Por el momento, esta función no está disponible. Actualmente, estamos trabajando en su implementación.",
+                              confirmButtonText: "Aceptar",
+                              icon: 'success',
+                              width: '40%',
+                              background: '#D9A796',
+                              confirmButtonColor:' #05888d',
+                              time:2000
+                              
+                          }) }
     </script>  
+        
 </body>
 </html>

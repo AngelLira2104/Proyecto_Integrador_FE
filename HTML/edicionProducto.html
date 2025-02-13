@@ -45,22 +45,11 @@
             <div id="alertExitoRegistro" class="alert alert-success" role="alert" style="display: none;">
                 <b>¡Éxito!:</b> Producto registrado correctamente.
             </div>
+            <!-- Alerta para Indicar que ya existe el producto -->
+            <div id="alertProductoDuplicado" class="alert alert-danger" role="alert" style="display: none;">
+                <b>¡Alto!:</b> Producto registrado previamente.
+            </div>
             <!-- Insert any input fields you want for form 1 here -->
-            <!-- <div class="row mb-3">
-                <label for="inputID" class="col-sm-2 col-form-label required">ID</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputID"
-                        placeholder="Hasta 12 dígitos (ejemplo: 0001)" maxlength="12">
-                </div>
-            </div>
-             Alerta para ID no válido 
-            <div id="alertId" class="alert alert-danger d-none" role="alert">
-                <b>Error:</b> Solo ingresa hasta 12 caracteres numéricos.
-            </div>
-             Alerta para ID duplicado 
-            <div id="alertIdDuplicado" class="alert alert-danger d-none" role="alert">
-                <b>Error:</b> El ID ingresado ya existe.
-            </div>             -->
             <div class="row mb-3">
                 <label for="inputName" class="col-sm-2 col-form-label required">Nombre</label>
                 <div class="col-sm-10">
@@ -71,9 +60,7 @@
             <div id="alertNombre" class="alert alert-danger d-none" role="alert">
                 <b>Error:</b> El nombre ingresado no es válido (solo caracteres alfabéticos).
             </div> 
-            <!-- <div class="alert alert-danger fade show" style="display: none;" role="alert" id="alertIdDuplicado">
-                <p id="alertIdDuplicado">ID Duplicado</p>
-            </div> -->                                  
+            <!-- Campo para la descripcion-->                                  
             <div class="row mb-3">
                 <label for="inputDescription" class="col-sm-2 col-form-label required">Descripción</label>
                 <div class="col-sm-10">
@@ -84,6 +71,17 @@
             <!-- Alerta para descripción no válida -->
             <div id="alertDescripcion" class="alert alert-danger d-none" role="alert">
                 <b>Error:</b> La descripción es muy corta (mínimo 10 caracteres).
+            </div>
+            <!-- Campo para el color-->                                  
+            <div class="row mb-3">
+                <label for="inputColor" class="col-sm-2 col-form-label required">Color</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputColor" placeholder="Color">
+                </div>
+            </div>
+            <!-- Alerta para color no válida -->
+            <div id="alertColor" class="alert alert-danger d-none" role="alert">
+                <b>Error:</b> Color invalido.
             </div>
             <div class="row mb-3">
                 <label for="inputImage" class="col-sm-2 col-form-label required">Imagen</label>
@@ -222,6 +220,20 @@
             });
         });
     </script>
+    <script>function solutionn(){
+        swal.fire({
+            title:"En implementación.",
+                      text: "Por el momento, esta función no está disponible. Actualmente, estamos trabajando en su implementación.",
+                      confirmButtonText: "Aceptar",
+                      icon: 'success',
+                      width: '40%',
+                      background: '#D9A796',
+                      confirmButtonColor:' #05888d',
+                      time:2000
+                      
+                  }) }</script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./JS/Mensaje.js"></script>
 </body>
 
 </html>
