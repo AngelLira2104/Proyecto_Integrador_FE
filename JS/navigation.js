@@ -7,7 +7,7 @@ const urlEdicionProductos = new URL(location.origin+'/'+'HTML/edicionProducto.ht
 const urlInicioSesion = new URL(location.origin+'/'+'HTML/inicioSesion.html');
 
 window.addEventListener("load", function(event){
-    let loggedUser = sessionStorage.getItem("LoggedUser") || null;
+    let loggedUser = sessionStorage.getItem("Token") || null;
     //console.log(loggedUser); // In case you want to know who is the logged user for debug of the app
     try {
         const mainNavigation = document.getElementById("main-navbar");

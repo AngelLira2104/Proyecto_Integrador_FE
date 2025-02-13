@@ -130,8 +130,9 @@ btnRegistrar.addEventListener("click", async function (event) {
     });
     
     // ----------- FETCH POST ---------------
+    let token = sessionStorage.getItem("Token") || null;
     const myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer: "); //Aqui va el token de authorization
+    myHeaders.append("Authorization", "Bearer: " + token); //Aqui va el token de authorization
     myHeaders.append("Content-Type", "application/json");
 
     const requestOptions = {
