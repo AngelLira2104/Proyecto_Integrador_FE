@@ -23,7 +23,7 @@ async function getData(){
         redirect: "follow"
       };
       
-    fetch("http://localhost:8080/api/productos/", requestOptions)
+    fetch("/api/productos/", requestOptions)
         .then((response) => response.json())
         //.then((result) => console.log(result))
         .then((result) => {result.forEach( element => { addItem({name:element.nombre,img:element.imagen,description:element.descripcion})})})

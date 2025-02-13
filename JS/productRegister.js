@@ -142,7 +142,7 @@ btnRegistrar.addEventListener("click", async function (event) {
     redirect: "follow"
     };
 
-    let resultado = await fetch("http://localhost:8080/api/productos/", requestOptions)
+    let resultado = await fetch("/api/productos/", requestOptions)
       .then((response) => response.text())
       .then((result) => {return result})
       .catch((error) => console.error(error));

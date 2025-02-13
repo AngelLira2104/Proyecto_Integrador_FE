@@ -146,7 +146,7 @@ async function GuardarDatos () {
       redirect: "follow",
     };
 
-    let resultado = await fetch("http://localhost:8080/api/usuarios/", requestOptions)
+    let resultado = await fetch("/api/usuarios/", requestOptions)
       .then((response) => response.text())
       .then((result) => {return result})
       .catch((error) => console.error(error));

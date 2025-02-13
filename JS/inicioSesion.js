@@ -23,7 +23,7 @@ btnInicioSesion.addEventListener("click", async function (event) {
         redirect: "follow"
         };
 
-        let resultado = await fetch("http://localhost:8080/api/login/", requestOptions)
+        let resultado = await fetch("/api/login/", requestOptions)
             .then((response) => response.json())
             .then((result) => {return result})
             .catch((error) => console.error(error));
