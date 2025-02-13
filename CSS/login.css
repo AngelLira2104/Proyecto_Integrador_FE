@@ -36,12 +36,12 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 100vh;
     background-color: rgba(0,0,0,0.2);
 }
 .login_box{
     background-image: url("../IMG/fondologin.webp");
-    margin-top: -10em;
+    /* margin-top: 1em; */
     position: relative;
     width: 400px;
     height: fit-content;
@@ -147,7 +147,7 @@ background:var(--black-color) ;
 }
 .register{
     position: relative;
-    top: 40px;
+    top: 5px;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -164,6 +164,7 @@ background:var(--black-color) ;
 .boton:hover{
     background-color: #EBB2DC;
 }
+
 register a{
     font-weight: 500;
 }

@@ -30,39 +30,46 @@
 <form class="form" id="form">
       <div class="wrapperr">
         <div class="login_boxR">
-            <div class="login-header registro">
+            <!-- <div class="login-header registro">
                 <span>Regístrate</span>
-            </div>
+            </div> -->
             <form class="form form-register" id="form" novalidate>
+                <div>
+                    <h2 style="color: black; text-align: center;">Registro de Usuario</h2>
+                </div>
+                <div>
+                    <p style="color: black;"><span style="color: red; font-weight: bold;">*</span> <i>Los campos obligatorios están marcados con un
+                        asterisco</i></p>
+                </div>
             <div class="input-box">
-                <label for="inputName" class="label">Nombre*</label>
+                <label for="inputName" class="label required"><b>Nombre(s)</b></label>
                 <input name="Name" type="text" id="inputName" class="input-fiel" autocomplete="name" required placeholder="Nombre(s)">
             </div>
             <div class="inputR">
                 <div>
-                <label for="inputFirstSurName" class="label">Apellidos*</label>
+                <label for="inputFirstSurName" class="label required"><b>Apellidos</b></label>
                 </div>
-                <input name="FirstSurName" type="text" id="inputFirstSurName" class="Apellido1 apellidoM" required placeholder="Primer apellido">
-                <input name="SecondSurName" type="text" id="inputSecondSurName" class="Apellido2" required placeholder="Segundo apellido">
+                <input name="FirstSurName" type="text" id="inputFirstSurName" class="Apellido1 apellidoM" required placeholder="Apellido paterno">
+                <input name="SecondSurName" type="text" id="inputSecondSurName" class="Apellido2" required placeholder="Apellido materno">
             </div>
             <div class="input-box">
-                <label for="inputEmail" class="label">Correo electrónico*</label>
+                <label for="inputEmail" class="label required"><b>Correo electrónico</b></label>
                 <input name="Email" type="text" id="inputEmail" class="input-fiel" autocomplete="email"required placeholder="Correo electrónico">
             </div>
             <div class="input-box">
-                <label for="inputPhone" class="label">Teléfono*</label>
+                <label for="inputPhone" class="label required"><b>Teléfono</b></label>
                 <input name="Phone" type="text" id="inputPhone" class="input-fiel" required placeholder="Teléfono (10 dígitos)">
             </div>
             <div class="input-box">
-                <label for="userPass" class="label">Contraseña*</label>
-                <input name="Passs" type="password" id="userPass" class="input-fiel" autocomplete="new-password" required placeholder="Debe contener de 8-20 caracteres...">
+                <label for="userPass" class="label required"><b>Contraseña</b></label>
+                <input name="Passs" type="password" id="userPass" class="input-fiel" autocomplete="new-password" required placeholder="Debe contener entre 8-20 caracteres">
             </div>
             <div class="input-box">
-                <label for="userPassconfirm" class="label">Confirma contraseña*</label>
+                <label for="userPassconfirm" class="label required"><b>Confirma contraseña</b></label>
                 <input name="name=Passs2" type="password" id="userPassconfirm" class="input-fiel" required placeholder="Repite la contraseña">
             </div>
-            <div class="alert-error">Todos los campos son obligatorios*</div>
-        <button  id="submit" class="botonR">Registrase</button>
+            <!-- <div class="alert-error">Todos los campos son obligatorios*</div> -->
+        <button  id="submit" class="botonR">Registrarse</button>
          </form>
         </div>
       </div>
