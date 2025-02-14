@@ -153,5 +153,5 @@ window.addEventListener("load", function(event){
 });
 
 function closeSession(){
-    sessionStorage.removeItem("LoggedUser");
+    sessionStorage.removeItem("Token");
 }
