@@ -1,0 +1,30 @@
+#Registrar{
+    background-color: #AB5A8C !important;
+    border: #AB5A8C;
+}
+
+#Editar{
+    background-color: #EBB2DC !important;
+    border: #EBB2DC;
+}
+
+#btnRegistrar {
+    background-color: #9FC5B1 !important;
+    border: #9FC5B1;
+}
+
+#btnEditar {
+    background-color: #9FC5B1 !important;
+    border: #9FC5B1;
+}
+
+#btnEliminar {
+    background-color: #CDA1EE !important;
+    border: #CDA1EE;
+}
+
+.required::after {
+    content: " *";
+    color: red;
+    font-weight:bold;
+  }

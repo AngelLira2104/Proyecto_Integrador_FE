@@ -1,0 +1,284 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Lora", serif ;
+}
+body{
+    background-image: url("../IMG/Floreria.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* ======= Color de variables ========= */
+:root{
+    --prymary-color:#D9A796;
+    --second-color:#0597F2;
+    --black-color:#000000;
+}
+/* Recuble CSS */
+a{
+    text-decoration: none;
+    color: var(--second-color);
+
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/* Wrappers */
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+}
+.login_box{
+    background-image: url("../IMG/fondologin.webp");
+    /* margin-top: 1em; */
+    position: relative;
+    width: 400px;
+    height: fit-content;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--prymary-color);
+    border-radius:15px;
+    padding: 2em 2.5em 2em 2.5em;
+    color: var(--second-color);
+    box-shadow: 0px opx 10px 2px rgba(0, 0, 0, 0.3);
+    color: black;
+}
+.login-header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    background-color: var(--);
+    width: 350px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+}
+.login-header span{
+    position: relative;
+    font-size: 30px;
+    color: var(--black-color);
+    left: 60px;
+    top: -5px;
+    display: block;
+}
+.login-header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background:transparent;
+    box-shadow: 15px 0 0 0 0 var(--black-color);
+    
+}
+.login-header::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 50%;
+    background:transparent;
+    box-shadow: -15px 0 0 0 0 var(--black-color);
+}
+.input-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    color: black;
+}
+.input-fiel{
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: rgb(255, 255, 255);
+    color: var(--second-color);
+    padding-inline: 20px 50px;
+    border: 2px solid var(--black-color);
+    border-radius: 10px;
+    outline: none;
+}
+#user{
+    margin-bottom: 10px;
+}
+
+
+.icon{
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 20px;
+}
+.remember-forgot{
+    display:flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.input-submit{
+    width: 100%;
+    height: 50px;
+    background:#ffffff ;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transform: .3s;
+}
+.input-submit::hover{
+background:var(--black-color) ;
+}
+.register{
+    position: relative;
+    top: 40px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.boton{
+    top: 0px;
+    position: relative;
+    background-color: whitesmoke;
+    height: 30px;
+    width: 90px;
+    left: 35%;
+    color: rgb(0, 0, 0);
+    border: solid 2px rgb(206, 167, 167);
+}
+.boton:hover{
+    background-color: #EBB2DC;
+}
+register a{
+    font-weight: 500;
+}
+.logo{
+ position: relative;
+ left: 110px;
+ width: 100px;
+}
+.altlogo{
+    top: 8px;
+}
+#WrongUserInfo{
+    position: relative;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width:564px){
+    .wrapper{
+        padding: 50px;
+    }
+    .login_box{
+      padding: 2.5em 1.5em 4em 1.5em;  
+    }
+}
+/* Registro*/
+.inputR{
+    position: relative;
+    display:block;
+    flex-direction: column;
+    color: black;
+}
+.Apellido1{
+    width: 47%;
+    height: 50px;
+    font-size: 16px;
+    background:whitesmoke;
+    color: var(--second-color);
+    padding-inline: 10px 30px;
+    border: 2px solid var(--black-color);
+    border-radius: 10px;
+    outline: none;
+}
+#userApellido2{
+    text-align: left;
+}
+.Apellido2{
+   
+    position:relative;
+    width: 47%;
+    height: 50px;
+    left:5%; 
+    font-size: 16px;
+    background:whitesmoke;
+    color: var(--second-color);
+    padding-inline: 10px 30px;
+    border: 2px solid var(--black-color);
+    border-radius: 10px;
+    outline: none;
+}
+.logoR{
+    position: relative;
+    left: 38%;
+    width: 100px;
+    top: 15px;
+       
+   }
+   .botonR{
+       position: relative;
+       background-color: whitesmoke;
+       top: 10px;
+       height: 30px;
+       width: 90px;
+       left: 40%;
+       color: rgb(0, 0, 0);
+       border: solid 2px rgb(206, 167, 167);
+   }
+   .login_boxR{
+    background-image: url("../IMG/fondologin.webp");
+    margin-top: -40em;
+    position: relative;
+    width: 600px 20px 20px;
+    height: fit-content;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--prymary-color);
+    border-radius:15px;
+    padding: 2em 2.5em 2em 2.5em;
+    color: var(--second-color);
+    box-shadow: 20px 2px 10px 2px rgba(0, 0, 0, 0.3);
+    color:  rgb(255, 255, 255);
+}
+.wrapperr{
+    width: 100%;
+    margin-top:40em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    background-color: rgba(0,0,0,0.2);
+}
+.mensaje-error{
+    color: rgb(255, 0, 0);
+    display: none;
+}
+.reg{
+    color:#000000
+}
+.labell{
+
+    left: 50px;
+}
+.alert-error{
+    position: relative;
+    left: 90px;
+    color: black;
+}
+.registro{
+    left: 300px;
+}

@@ -1,0 +1,84 @@
+{
+    "productos": [
+        {
+            "Nombre": "Tulipanes",
+            "ID" : "0001",
+            "Descripcion": "En el lenguaje de las flores, los tulipanes pueden expresar una gran variedad de emociones, como el amor, la amistad, la alegría, la admiración, la pasión, la pureza, la inocencia, el orgullo, la dignidad, el éxito, entre otras.",
+            "Imagen": "https://ematoader.ro/wp-content/uploads/2020/01/Buchet-Lalele-Roz-Deschis.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "690.00"
+        },
+        {
+            "Nombre": "Gerberas",
+            "ID": "0002",
+            "Descripcion": "En el lenguaje de las flores, las gerberas simbolizan alegría, pureza, inocencia, amistad, felicidad y admiración. También pueden expresar la intensidad de los sentimientos.",
+            "Imagen": "https://llevaleflores.com/storage/arrangements/JAR025/thumb_1648496998_jarron-50-gerberas-variadas-02.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "869.00"
+        },
+        {
+            "Nombre": "Dalias",
+            "ID": "0003",
+            "Descripcion": "En el lenguaje de las flores, la dalia simboliza la elegancia, la fuerza, la dignidad, la creatividad, la positividad y el crecimiento. También puede representar el amor eterno, la belleza, la bondad y la fuerza interior.",
+            "Imagen": "https://floradeira.es/wp-content/uploads/2019/07/ramo-flores-.dahlias-3.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "620.00"
+        },
+        {
+            "Nombre": "Orquídeas",
+            "ID" : "0004",
+            "Descripcion": "Las orquídeas suelen considerarse un símbolo de feminidad, ya que su delicadeza y elegancia se asocian a la belleza femenina. Además, las orquídeas suelen regalarse a las mujeres en ocasiones especiales, como el Día de la Madre, San Valentín o los cumpleaños, simbolizando amor y afecto.",
+            "Imagen": "https://i.pinimg.com/originals/e5/49/0c/e5490c1eb9582fc6659aa5b29e1b9795.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "1350.00"
+        },
+        {
+            "Nombre": "Girasoles",
+            "ID" : "0005",
+            "Descripcion": "En el lenguaje de las flores, el girasol simboliza la felicidad, la alegría, el positivismo, la vitalidad, la energía, la buena suerte, la salud y la esperanza. También puede representar el amor, la admiración, la honestidad y la transparencia.",
+            "Imagen": "https://www.rosatel.mx/cdn/shop/products/R2156.png?v=1661882556",
+            "Existencias" : "10",
+            "PrecioUnitario" : "850.00"
+        },
+        {
+            "Nombre": "Rosas Rojas",
+            "ID" : "0006",
+            "Descripcion": "Las rosas rojas simbolizan amor apasionado e intenso, y son un lenguaje universal para expresar sentimientos románticos. También pueden representar respeto y admiración.",
+            "Imagen": "https://rosaprima.nyc3.cdn.digitaloceanspaces.com/Hot_Paris_Conceptual_View.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "500.00"
+        },
+        {
+            "Nombre": "Hortensias",
+            "ID" : "0007",
+            "Descripcion": "En el lenguaje de las flores, la hortensia puede significar gratitud, comprensión, amor, respeto, admiración, pureza, sinceridad, felicidad, amistad, confianza y paz.",
+            "Imagen": "https://th.bing.com/th/id/R.c5f8ff0d6cfbabc0371f298d9aea0b61?rik=89WBb7NvV67Gsg&pid=ImgRaw&r=0",
+            "Existencias" : "10",
+            "PrecioUnitario" : "980.00"
+        },
+        {
+            "Nombre": "Lirios",
+            "ID" : "0008",
+            "Descripcion": "El lirio es una flor que puede tener distintos significados según su color y contexto cultural. Los lirios blancos simbolizan pureza, inocencia y belleza.",
+            "Imagen": "https://i.pinimg.com/originals/4d/ce/15/4dce159b4064a5649c6058ea4c6773df.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "559.00"
+        },
+        {
+            "Nombre": "Gypsophila",
+            "ID" : "0009",
+            "Descripcion": "La gypsophila simboliza pureza, inocencia y eternidad. En muchas culturas occidentales, es común en bodas y ceremonias religiosas, representando los nuevos comienzos y la infinita pureza del amor.",
+            "Imagen": "https://www.floresyplantas.net/wp-content/uploads/ramo-de-gypsophila-paniculata1.jpg",
+            "Existencias" : "10",
+            "PrecioUnitario" : "499.00"
+        },
+        {
+            "Nombre": "Rosas Azules",
+            "ID" : "0010",
+            "Descripcion": "Las rosas azules simbolizan amor, esperanza, confianza, unión, armonía, optimismo y afecto. También pueden representar el misterio, el secreto, el orgullo y el amor no correspondido.",
+            "Imagen": "https://www.countrygardener.co.uk/wp-content/uploads/2022/01/blue-roses-bouquet-600x600.png",
+            "Existencias" : "10",
+            "PrecioUnitario" : "1350.00"
+        }
+    ]
+}

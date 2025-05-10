@@ -1,0 +1,172 @@
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; 
+    box-sizing: border-box;
+    display: block; 
+}
+
+#main-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1050; 
+    background-color: white; 
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 100px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 1000px; /
+    padding-right: 1000px; 
+}
+
+@media (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        max-width: 100%;
+    }
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 500px;
+    margin: auto;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    text-align: center;
+    min-height: 200px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.img-box {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.card-body {
+    padding: 15px;
+    font-size: 0.9rem;
+    padding-bottom: 40px;
+    line-height: normal;
+    flex-grow: 1;
+}
+
+.card .btn {
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-family: 'Flora', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease, visibility 0.3s ease, color 0.3s ease;
+    background-color: #EBB2DC;
+    border: 2px solid #AB5A8C;
+    color: #f8f8f8;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+
+.card:hover .btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card .btn:hover {
+    color: #FF69B4;
+    text-decoration: none;
+    background-color: white;
+}
+
+.card .btn:focus,
+.card .btn:active {
+    color: #CDA1EE;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: white;
+    border: 2px solid #CDA1EE;
+}
+
+.card .btn:focus-visible {
+    outline: none !important;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+@media (max-width: 768px) {
+    .card .btn {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    margin-top: 50px;
+    position: relative;
+}
+
+#productos-container {
+    margin-left: 60px;
+    margin-right: 60px;
+}

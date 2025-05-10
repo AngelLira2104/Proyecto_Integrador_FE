@@ -1,0 +1,169 @@
+/* Lora Regular 400 al resto de la página */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Lora", serif ;
+}
+body {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+  /* Lora SemiBold 600 Italic para titulos y encabezados  */
+h2, h3, h4, h5, h6 {
+font-family: 'Lora', serif;
+font-style: italic;
+font-weight: 300;
+}
+/* Estilo único para h1 */
+h1 {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+/* Love ligth solo para letra del logo */
+#titulo-logo {
+    font-family: 'Lora', serif;
+    font-weight: normal; 
+    font-size: 35px;
+    color: white;
+}
+
+#main-navbar{
+    background-color: #AB5A8C !important;
+}
+#secondary-navbar{
+    background-color: #EBB2DC !important;
+}
+#about-bar{
+    background-color: #EBB2DC !important;
+}
+#general-footer{
+    background-color: #AB5A8C;
+}
+#main-title{
+    text-align: center;
+    margin: 10px;
+}
+
+.footer-content{
+    text-align: left;
+}
+.footer-content-title{
+    font-size: x-large;
+}
+.footer-link{
+    color: white;
+    text-decoration: none;
+}
+.github-btn{
+    background-color: #AB5A8C;
+    border: #AB5A8C;
+}
+.github-btn:hover{
+    background-color: #DCE0FF;
+    color: black;
+}
+.github-btn:active {
+    background-color: #DCE0FF !important;
+    color: black !important;
+}
+.in-btn{
+    background-color: #EBB2DC;
+    border: #EBB2DC;
+}
+.in-btn:hover{
+    background-color: #DCE0FF;
+    color: black;
+}
+.in-btn:active {
+    background-color: #DCE0FF !important;
+    color: black !important;
+}
+.star-product{
+    color: white !important;
+    background-color: #CDA1EE;
+}
+.main-nav-link{
+    color: white;
+    font-size: large;
+}
+.main-nav-link:hover{
+    color: white;
+    text-decoration-line: underline;
+    font-weight: bold;
+}
+.secondary-nav-dropmenu{
+    color: white !important;
+    text-decoration: none;
+    font-size: large;
+}
+/*correción imagenes about*/
+img.rounded-circle {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.required::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+  }
+  #carrito{
+    position:static;
+    width: 30px;
+  }
+ #carritos{
+    position: static;
+    left: 0px;
+ }
+
+ /*Imagenes de index*/
+.img-box{
+    height: 100%;
+    box-sizing: border-box;
+}
+.img-destacados{
+    height: 500px;
+}
+
+/*Las tarjetas*/
+.card{
+    height: 850px;
+}
+
+#btnEnviarContacto {
+    background-color: #CDA1EE !important;
+    border: #CDA1EE;
+}
+#btnEnviarContacto:hover {
+    background-color: #C4F8D4 !important;
+    border: #CDA1EE;
+    color: black;
+}
+.dropdown-menu{
+    background-color: #AB5A8C;
+    border: none;
+}
+.dropdown-menu:hover{
+    background-color: #ab5a8cf6;
+}
+.nombre:hover {
+    color: #CDA1EE;
+}
+.form-control {
+        border: 1.5px solid #CDA1EE;
+        border-radius: 8px;
+        padding: 5px;
+        width: 100%;
+        box-sizing: border-box;       
+}
